@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, FC } from "react";
-// import { Helmet } from "react-helmet";
+import Script from "next/script";
 import anime from "animejs";
 import { StyledLoader } from "./loader.style";
 import { IconLoader } from "@/components/icons";
@@ -55,7 +55,14 @@ const Loader: FC<loaderProps> = ({ finishLoading }) => {
 
 	return (
 		<StyledLoader className="loader" isMounted={isMounted}>
-			{/* <Helmet bodyAttributes={{ class: `hidden` }} /> */}
+			<Script
+				id={"hideBody"}
+				dangerouslySetInnerHTML={{
+					__html: `
+                document.body.classList.add('hidden');
+            `,
+				}}
+			/>
 
 			<div className="logo-wrapper">
 				<IconLoader />

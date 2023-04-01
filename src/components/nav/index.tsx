@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { navLinks } from "@/config";
 import { loaderDelay } from "@/utils";
 import { useScrollDirection, usePrefersReducedMotion } from "@/hooks";
-// import { Menu } from "@/components";
+import { Menu } from "@/components";
 import { IconLogo } from "@/components/icons";
 import { StyledHeader, StyledLinks, StyledNav } from "./nav.style";
 
@@ -90,7 +90,7 @@ const Nav: FC<navProps> = ({ isHome }) => {
 							<div>{ResumeLink}</div>
 						</StyledLinks>
 
-						{/* <Menu /> */}
+						<Menu />
 					</>
 				) : (
 					<>
@@ -161,8 +161,7 @@ const Nav: FC<navProps> = ({ isHome }) => {
 									classNames={fadeClass}
 									timeout={timeout}
 								>
-									{/* <Menu /> */}
-									<h1>Menu</h1>
+									<Menu />
 								</CSSTransition>
 							)}
 						</TransitionGroup>
