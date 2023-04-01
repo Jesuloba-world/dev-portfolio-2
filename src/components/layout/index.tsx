@@ -1,7 +1,7 @@
 import { useState, useEffect, FC, ReactNode } from "react";
 import styled, { ThemeProvider } from "styled-components";
 // import { Head, Loader, Nav, Social, Email, Footer } from "@components";
-import { Loader } from "@/components";
+import { Loader, Nav } from "@/components";
 import { GlobalStyle, theme } from "@/styles";
 import { StyledContent } from "./layout.style";
 import { useRouter } from "next/router";
@@ -29,10 +29,8 @@ const Layout: FC<layoutProps> = ({ children }) => {
 	};
 
 	const UseHash: (str: string) => void = (str) => {
-		console.log(str);
-		if (!str) {
+		if (str) {
 			const hash = str.split("#")[1];
-			console.log(hash);
 			setTimeout(() => {
 				const el = document.getElementById(hash);
 				if (el) {
@@ -83,7 +81,7 @@ const Layout: FC<layoutProps> = ({ children }) => {
 						</>
 					) : (
 						<StyledContent>
-							{/* <Nav isHome={isHome} /> */}
+							<Nav isHome={isHome} />
 							{/* <Social isHome={isHome} /> */}
 							{/* <Email isHome={isHome} /> */}
 
