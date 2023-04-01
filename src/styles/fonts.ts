@@ -1,107 +1,146 @@
 import { css } from "styled-components";
+import localFont from "next/font/local";
+import { NextFont } from "next/dist/compiled/@next/font";
 
-import CalibreRegularWoff from "@/fonts/Calibre/Calibre-Regular.woff";
-import CalibreRegularWoff2 from "@/fonts/Calibre/Calibre-Regular.woff2";
-import CalibreMediumWoff from "@/fonts/Calibre/Calibre-Medium.woff";
-import CalibreMediumWoff2 from "@/fonts/Calibre/Calibre-Medium.woff2";
-import CalibreSemiboldWoff from "@/fonts/Calibre/Calibre-Semibold.woff";
-import CalibreSemiboldWoff2 from "@/fonts/Calibre/Calibre-Semibold.woff2";
+const CalibreNormal = localFont({
+	src: [
+		{
+			path: "../fonts/Calibre/Calibre-Regular.woff",
+			weight: "400",
+			style: "normal",
+		},
+		{
+			path: "../fonts/Calibre/Calibre-Regular.woff2",
+			weight: "400",
+			style: "normal",
+		},
+		{
+			path: "../fonts/Calibre/Calibre-Medium.woff",
+			weight: "500",
+			style: "normal",
+		},
+		{
+			path: "../fonts/Calibre/Calibre-Medium.woff2",
+			weight: "500",
+			style: "normal",
+		},
+		{
+			path: "../fonts/Calibre/Calibre-Semibold.woff",
+			weight: "600",
+			style: "normal",
+		},
+		{
+			path: "../fonts/Calibre/Calibre-Semibold.woff2",
+			weight: "600",
+			style: "normal",
+		},
+	],
+});
 
-import CalibreRegularItalicWoff from "@/fonts/Calibre/Calibre-RegularItalic.woff";
-import CalibreRegularItalicWoff2 from "@/fonts/Calibre/Calibre-RegularItalic.woff2";
-import CalibreMediumItalicWoff from "@/fonts/Calibre/Calibre-MediumItalic.woff";
-import CalibreMediumItalicWoff2 from "@/fonts/Calibre/Calibre-MediumItalic.woff2";
-import CalibreSemiboldItalicWoff from "@/fonts/Calibre/Calibre-SemiboldItalic.woff";
-import CalibreSemiboldItalicWoff2 from "@/fonts/Calibre/Calibre-SemiboldItalic.woff2";
+const CalibreItalic = localFont({
+	src: [
+		{
+			path: "../fonts/Calibre/Calibre-RegularItalic.woff",
+			weight: "400",
+			style: "italic",
+		},
+		{
+			path: "../fonts/Calibre/Calibre-RegularItalic.woff2",
+			weight: "400",
+			style: "italic",
+		},
+		{
+			path: "../fonts/Calibre/Calibre-MediumItalic.woff",
+			weight: "500",
+			style: "italic",
+		},
+		{
+			path: "../fonts/Calibre/Calibre-MediumItalic.woff2",
+			weight: "500",
+			style: "italic",
+		},
+		{
+			path: "../fonts/Calibre/Calibre-SemiboldItalic.woff",
+			weight: "600",
+			style: "italic",
+		},
+		{
+			path: "../fonts/Calibre/Calibre-SemiboldItalic.woff2",
+			weight: "600",
+			style: "italic",
+		},
+	],
+});
 
-import SFMonoRegularWoff from "@/fonts/SFMono/SFMono-Regular.woff";
-import SFMonoRegularWoff2 from "@/fonts/SFMono/SFMono-Regular.woff2";
-import SFMonoSemiboldWoff from "@/fonts/SFMono/SFMono-Semibold.woff";
-import SFMonoSemiboldWoff2 from "@/fonts/SFMono/SFMono-Semibold.woff2";
+const SFMonoNormal = localFont({
+	src: [
+		{
+			path: "../fonts/SFMono/SFMono-Regular.woff",
+			weight: "400",
+			style: "normal",
+		},
+		{
+			path: "../fonts/SFMono/SFMono-Regular.woff2",
+			weight: "400",
+			style: "normal",
+		},
+		{
+			path: "../fonts/SFMono/SFMono-Semibold.woff",
+			weight: "600",
+			style: "normal",
+		},
+		{
+			path: "../fonts/SFMono/SFMono-Semibold.woff2",
+			weight: "600",
+			style: "normal",
+		},
+	],
+});
 
-import SFMonoRegularItalicWoff from "@/fonts/SFMono/SFMono-RegularItalic.woff";
-import SFMonoRegularItalicWoff2 from "@/fonts/SFMono/SFMono-RegularItalic.woff2";
-import SFMonoSemiboldItalicWoff from "@/fonts/SFMono/SFMono-SemiboldItalic.woff";
-import SFMonoSemiboldItalicWoff2 from "@/fonts/SFMono/SFMono-SemiboldItalic.woff2";
+const SFMonoItalic = localFont({
+	src: [
+		{
+			path: "../fonts/SFMono/SFMono-RegularItalic.woff",
+			weight: "400",
+			style: "italic",
+		},
+		{
+			path: "../fonts/SFMono/SFMono-RegularItalic.woff2",
+			weight: "400",
+			style: "italic",
+		},
+		{
+			path: "../fonts/SFMono/SFMono-SemiboldItalic.woff",
+			weight: "600",
+			style: "italic",
+		},
+		{
+			path: "../fonts/SFMono/SFMono-SemiboldItalic.woff2",
+			weight: "600",
+			style: "italic",
+		},
+	],
+});
 
-const calibreNormalWeights = {
-	400: [CalibreRegularWoff, CalibreRegularWoff2],
-	500: [CalibreMediumWoff, CalibreMediumWoff2],
-	600: [CalibreSemiboldWoff, CalibreSemiboldWoff2],
-};
+type createFontFacesType = (family: NextFont) => string;
 
-const calibreItalicWeights = {
-	400: [CalibreRegularItalicWoff, CalibreRegularItalicWoff2],
-	500: [CalibreMediumItalicWoff, CalibreMediumItalicWoff2],
-	600: [CalibreSemiboldItalicWoff, CalibreSemiboldItalicWoff2],
-};
-
-const sfMonoNormalWeights = {
-	400: [SFMonoRegularWoff, SFMonoRegularWoff2],
-	600: [SFMonoSemiboldWoff, SFMonoSemiboldWoff2],
-};
-
-const sfMonoItalicWeights = {
-	400: [SFMonoRegularItalicWoff, SFMonoRegularItalicWoff2],
-	600: [SFMonoSemiboldItalicWoff, SFMonoSemiboldItalicWoff2],
-};
-
-const calibre = {
-	name: "Calibre",
-	normal: calibreNormalWeights,
-	italic: calibreItalicWeights,
-};
-
-const sfMono = {
-	name: "SF Mono",
-	normal: sfMonoNormalWeights,
-	italic: sfMonoItalicWeights,
-};
-
-type createFontFacesType = (
-	family: {
-		name: string;
-		normal: {
-			400: any[];
-			500?: any[];
-			600: any[];
-		};
-		italic: {
-			400: any[];
-			500?: any[];
-			600: any[];
-		};
-	},
-	style?: "normal" | "italic"
-) => string;
-
-const createFontFaces: createFontFacesType = (family, style = "normal") => {
+const createFontFaces: createFontFacesType = (family) => {
 	let styles = "";
 
-	for (const [weight, formats] of Object.entries(family[style])) {
-		const woff = formats[0];
-		const woff2 = formats[1];
-
-		styles += `
-      @font-face {
-        font-family: '${family.name}';
-        src: url(${woff2}) format('woff2'),
-            url(${woff}) format('woff');
-        font-weight: ${weight};
-        font-style: ${style};
-        font-display: auto;
-      }
-    `;
+	styles += `
+	@font-face {
+		font-family: '${family.style.fontFamily}';
 	}
+	`;
 
 	return styles;
 };
 
-const calibreNormal = createFontFaces(calibre);
-const calibreItalic = createFontFaces(calibre, "italic");
+const calibreNormal = createFontFaces(CalibreNormal);
+const calibreItalic = createFontFaces(CalibreItalic);
 
-const sfMonoNormal = createFontFaces(sfMono);
-const sfMonoItalic = createFontFaces(sfMono, "italic");
+const sfMonoNormal = createFontFaces(SFMonoNormal);
+const sfMonoItalic = createFontFaces(SFMonoItalic);
 
 const Fonts = css`
 	${calibreNormal + calibreItalic + sfMonoNormal + sfMonoItalic}
