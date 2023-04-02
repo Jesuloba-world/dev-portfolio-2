@@ -87,7 +87,6 @@ const Layout: FC<layoutProps> = ({ children }) => {
 							<div id="content">
 								{children}
 								<Footer />
-								<h1>Under the footer</h1>
 							</div>
 						</StyledContent>
 					)}

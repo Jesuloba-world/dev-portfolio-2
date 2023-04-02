@@ -12,7 +12,7 @@ interface ScrollDirectionParams {
 type useScrollDirectionType = ({}: ScrollDirectionParams) => "up" | "down";
 
 const useScrollDirection: useScrollDirectionType = ({
-	initialDirection = SCROLL_DOWN,
+	initialDirection = SCROLL_UP,
 	thresholdPixels = 0,
 	off = false,
 } = {}) => {

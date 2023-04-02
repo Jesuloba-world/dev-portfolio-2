@@ -55,14 +55,14 @@ const Loader: FC<loaderProps> = ({ finishLoading }) => {
 
 	return (
 		<StyledLoader className="loader" isMounted={isMounted}>
-			<Script
+			{/* <Script
 				id={"hideBody"}
 				dangerouslySetInnerHTML={{
 					__html: `
-                document.body.classList.add('hidden');
+                document.body.classList.add(${isMounted && `hidden`});
             `,
 				}}
-			/>
+			/> */}
 
 			<div className="logo-wrapper">
 				<IconLoader />

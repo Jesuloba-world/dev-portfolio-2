@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {
 	Layout,
 	Hero,
-	// About,
+	About,
 	// Jobs,
 	// Featured,
 	// Projects,
@@ -18,7 +18,7 @@ export default function Home() {
 		<Layout>
 			<StyledMainContainer className="fillHeight">
 				<Hero />
-				{/* <About /> */}
+				<About />
 				{/* <Jobs /> */}
 				{/* <Featured /> */}
 				{/* <Projects /> */}
