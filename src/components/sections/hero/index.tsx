@@ -35,11 +35,11 @@ const Hero = () => {
 	const five = (
 		<Link
 			className="email-link"
-			href="/#projects"
+			href="/#contact"
 			// target="_blank"
 			// rel="noreferrer"
 		>
-			Check out my works!
+			Get in touch!
 		</Link>
 	);
 

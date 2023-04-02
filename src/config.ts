@@ -72,3 +72,12 @@ export const srConfig = (delay = 200, viewFactor = 0.25) => {
 		left: 0;
 	}
 };
+
+export const siteMetaData = {
+	defaultTitle: "John Needle",
+	defaultDescription:
+		"Software engineer specializing in techniques that optimize user experience",
+	siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
+	defaultImage: "",
+	twitterUsername: "@jesuloba0_",
+};
