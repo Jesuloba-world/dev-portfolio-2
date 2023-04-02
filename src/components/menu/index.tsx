@@ -1,10 +1,4 @@
-import React, {
-	useState,
-	useEffect,
-	useRef,
-	useCallback,
-	useMemo,
-} from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Script from "next/script";
 import { navLinks } from "@/config";
@@ -110,10 +104,6 @@ const Menu = () => {
 
 	return (
 		<StyledMenu>
-			{/* <Head>
-				<body className={menuOpen ? "blur" : ""} />
-			</Head> */}
-
 			<Script
 				id={"menuBlur"}
 				dangerouslySetInnerHTML={{
