@@ -1,6 +1,6 @@
 import { useState, useEffect, FC, ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
-import { Loader, Nav, Social, Email } from "@/components";
+import { Loader, Nav, Social, Email, Footer } from "@/components";
 import { GlobalStyle, theme } from "@/styles";
 import { StyledContent } from "./layout.style";
 import { useRouter } from "next/router";
@@ -86,7 +86,8 @@ const Layout: FC<layoutProps> = ({ children }) => {
 
 							<div id="content">
 								{children}
-								{/* <Footer /> */}
+								<Footer />
+								<h1>Under the footer</h1>
 							</div>
 						</StyledContent>
 					)}
