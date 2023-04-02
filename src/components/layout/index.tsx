@@ -1,6 +1,6 @@
 import { useState, useEffect, FC, ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
-import { Loader, Nav, Social } from "@/components";
+import { Loader, Nav, Social, Email } from "@/components";
 import { GlobalStyle, theme } from "@/styles";
 import { StyledContent } from "./layout.style";
 import { useRouter } from "next/router";
@@ -82,7 +82,7 @@ const Layout: FC<layoutProps> = ({ children }) => {
 						<StyledContent>
 							<Nav isHome={isHome} />
 							<Social isHome={isHome} />
-							{/* <Email isHome={isHome} /> */}
+							<Email isHome={isHome} />
 
 							<div id="content">
 								{children}
