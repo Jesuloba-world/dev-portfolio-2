@@ -19,33 +19,25 @@ const Hero = () => {
 	}, [prefersReducedMotion]);
 
 	const one = <h1>Hi, my name is</h1>;
-	const two = <h2 className="big-heading">Jesuloba John.</h2>;
-	const three = <h3 className="big-heading">I build things for the web.</h3>;
+	const two = <h2 className="big-heading">John Needle.</h2>;
+	const three = <h3 className="big-heading">I create magic with code.</h3>;
 	const four = (
 		<>
 			<p>
-				I’m a Software engineer with a good understanding of techniques
-				geared towards optimum user experience. Currently, I’m focused
-				on building accessible, human-centered products at{" "}
-				<a
-					href="http://sidebrief.com/"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Sidebrief
-				</a>
-				.
+				I&apos;m a software engineer specializing in techniques that
+				optimize user experience, creating digital solutions that are
+				intuitive, accessible, and effective.
 			</p>
 		</>
 	);
 	const five = (
 		<Link
 			className="email-link"
-			href="/resume.pdf"
-			target="_blank"
-			rel="noreferrer"
+			href="/#projects"
+			// target="_blank"
+			// rel="noreferrer"
 		>
-			Check out my resume!
+			Check out my works!
 		</Link>
 	);
 
