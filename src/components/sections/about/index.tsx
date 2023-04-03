@@ -56,7 +56,7 @@ const About = () => {
 								a student-led design studio
 							</a>{" "}
 							and currently working at{" "}
-							<a href={"http://sidebrief.com/"}>a startup</a>. My
+							<a href={"http://sidebrief.com/"}>Sidebrief</a>. My
 							main focus these days is picking up{" "}
 							<a href="https://go.dev/">Golang</a> and getting
 							into the devops and cloud space.
@@ -67,13 +67,13 @@ const About = () => {
 							<a href="https://store.steampowered.com/app/268500/XCOM_2/">
 								XCOM 2
 							</a>
-							, well modded of course, or reading about weird
-							topics nobody cares about
+							, well modded of course, or reading about some weird
+							topic nobody cares about.
 						</p>
 
 						<p>
-							Here are a few technologies I’ve been working with
-							recently:
+							Here are a few technologies I&apos;ve been working
+							with recently:
 						</p>
 					</div>
 

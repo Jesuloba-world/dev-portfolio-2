@@ -99,20 +99,21 @@ const Menu = () => {
 		};
 	}, [onKeyDown, setFocusables]);
 
+	useEffect(() => {
+		const body = document.querySelector("body")!;
+
+		if (menuOpen) {
+			body.classList.add("blur");
+		} else {
+			if (body.classList.contains("blur")) body.classList.remove("blur");
+		}
+	}, [menuOpen]);
+
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	useOnClickOutside(wrapperRef, () => setMenuOpen(false));
 
 	return (
 		<StyledMenu>
-			<Script
-				id={"menuBlur"}
-				dangerouslySetInnerHTML={{
-					__html: `
-                document.body.classList.add(${menuOpen ? "blur" : ""});
-            `,
-				}}
-			/>
-
 			<div ref={wrapperRef}>
 				<StyledHamburgerButton
 					onClick={toggleMenu}

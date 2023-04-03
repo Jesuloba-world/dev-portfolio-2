@@ -53,17 +53,14 @@ const Loader: FC<loaderProps> = ({ finishLoading }) => {
 		return () => clearTimeout(timeout);
 	}, [animate]);
 
+	useEffect(() => {
+		const body = document.querySelector("body")!;
+		body.classList.add("hidden");
+		return body.classList.remove("hidden");
+	}, []);
+
 	return (
 		<StyledLoader className="loader" isMounted={isMounted}>
-			{/* <Script
-				id={"hideBody"}
-				dangerouslySetInnerHTML={{
-					__html: `
-                document.body.classList.add(${isMounted && `hidden`});
-            `,
-				}}
-			/> */}
-
 			<div className="logo-wrapper">
 				<IconLoader />
 			</div>
