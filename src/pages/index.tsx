@@ -8,12 +8,20 @@ import {
 	// Projects,
 	// Contact,
 } from "@/components";
+import { NextPage } from "next";
+import { jobs, getJobReturnType } from "@/lib/jobs";
 
 const StyledMainContainer = styled.main`
 	counter-reset: section;
 `;
 
-export default function Home() {
+interface homeProps {
+	allJobs: getJobReturnType[];
+}
+
+const Home: NextPage<homeProps> = ({ allJobs }) => {
+	console.log(allJobs);
+
 	return (
 		<Layout>
 			<StyledMainContainer className="fillHeight">
@@ -26,4 +34,14 @@ export default function Home() {
 			</StyledMainContainer>
 		</Layout>
 	);
-}
+};
+
+export const getStaticProps = async () => {
+	const allJobs = jobs();
+
+	return {
+		props: { allJobs },
+	};
+};
+
+export default Home;

@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback, FC } from "react";
-import Script from "next/script";
 import anime from "animejs";
 import { StyledLoader } from "./loader.style";
 import { IconLoader } from "@/components/icons";
@@ -25,7 +24,7 @@ const Loader: FC<loaderProps> = ({ finishLoading }) => {
 				strokeDashoffset: [anime.setDashoffset, 0],
 			})
 			.add({
-				targets: "#logo #B",
+				targets: "#logo #J",
 				duration: 700,
 				easing: "easeInOutQuart",
 				opacity: 1,
