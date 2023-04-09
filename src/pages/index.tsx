@@ -3,7 +3,7 @@ import {
 	Layout,
 	Hero,
 	About,
-	// Jobs,
+	Jobs,
 	// Featured,
 	// Projects,
 	// Contact,
@@ -20,14 +20,12 @@ interface homeProps {
 }
 
 const Home: NextPage<homeProps> = ({ allJobs }) => {
-	console.log(allJobs);
-
 	return (
 		<Layout>
 			<StyledMainContainer className="fillHeight">
 				<Hero />
 				<About />
-				{/* <Jobs /> */}
+				<Jobs jobsData={allJobs} />
 				{/* <Featured /> */}
 				{/* <Projects /> */}
 				{/* <Contact /> */}
