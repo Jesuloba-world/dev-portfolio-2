@@ -12,6 +12,7 @@ import { srConfig } from "@/config";
 import { KEY_CODES } from "@/utils";
 import { usePrefersReducedMotion } from "@/hooks";
 import { getJobReturnType } from "@/lib/jobs";
+import ReactMarkdown from "react-markdown";
 
 type TabRef = { focus: () => void } | null;
 type TabsRef = TabRef[];
@@ -151,19 +152,9 @@ const Jobs: React.FC<jobProps> = ({ jobsData }) => {
 										<p className="range">{range}</p>
 
 										<div>
-											<ul>
-												{content
-													.split("\r\n")
-													.filter(
-														(line) => line !== ""
-													)
-													.map((line) =>
-														line.replace("- ", "")
-													)
-													.map((item, i) => (
-														<li key={i}>{item}</li>
-													))}
-											</ul>
+											<ReactMarkdown>
+												{content}
+											</ReactMarkdown>
 										</div>
 									</StyledTabPanel>
 								</CSSTransition>
