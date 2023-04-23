@@ -4,13 +4,15 @@ export const StyledHeroSection = styled.section`
 	${({ theme }) => theme.mixins.flexCenter};
 	flex-direction: column;
 	align-items: flex-start;
-	min-height: 100vh;
-	height: 100vh;
+	min-height: calc(100vh - var(--nav-height));
+	height: calc(100vh - var(--nav-height));
+	/* min-height: 100vh;
+	height: 100vh; */
 	padding: 0;
 
 	@media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
 		height: auto;
-		padding-top: var(--nav-height);
+		/* padding-top: var(--nav-height); */
 	}
 
 	h1 {

@@ -4,6 +4,7 @@ import { Loader, Nav, Social, Email, Footer, Head } from "@/components";
 import { GlobalStyle, theme } from "@/styles";
 import { StyledContent } from "./layout.style";
 import { useRouter } from "next/router";
+import Headroom from "react-headroom";
 
 interface layoutProps {
 	children: ReactNode;
@@ -80,7 +81,9 @@ const Layout: FC<layoutProps> = ({ children }) => {
 						</>
 					) : (
 						<StyledContent>
-							<Nav isHome={isHome} />
+							<Headroom>
+								<Nav isHome={isHome} />
+							</Headroom>
 							<Social isHome={isHome} />
 							<Email isHome={isHome} />
 

@@ -19,6 +19,7 @@
 		"next": "13.2.4",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
+		"react-headroom": "^3.2.1",
 		"react-markdown": "^8.0.6",
 		"react-transition-group": "^4.4.5",
 		"scrollreveal": "^4.0.9",
@@ -27,6 +28,7 @@
 	},
 	"devDependencies": {
 		"@types/animejs": "^3.1.7",
+		"@types/react-headroom": "^3.2.0",
 		"@types/react-transition-group": "^4.4.5",
 		"@types/scrollreveal": "^0.0.8",
 		"@types/styled-components": "^5.1.26"

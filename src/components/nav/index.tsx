@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { navLinks } from "@/config";
 import { loaderDelay } from "@/utils";
-import { useScrollDirection, usePrefersReducedMotion } from "@/hooks";
+import { usePrefersReducedMotion } from "@/hooks";
 import { Menu } from "@/components";
 import { IconLogo } from "@/components/icons";
 import { StyledHeader, StyledLinks, StyledNav } from "./nav.style";
@@ -14,13 +14,7 @@ interface navProps {
 
 const Nav: FC<navProps> = ({ isHome }) => {
 	const [isMounted, setIsMounted] = useState(!isHome);
-	const scrollDirection = useScrollDirection({ initialDirection: "down" });
-	const [scrolledToTop, setScrolledToTop] = useState(true);
 	const prefersReducedMotion = usePrefersReducedMotion();
-
-	const handleScroll = () => {
-		setScrolledToTop(window.pageYOffset < 50);
-	};
 
 	useEffect(() => {
 		if (prefersReducedMotion) {
@@ -31,11 +25,8 @@ const Nav: FC<navProps> = ({ isHome }) => {
 			setIsMounted(true);
 		}, 100);
 
-		window.addEventListener("scroll", handleScroll);
-
 		return () => {
 			clearTimeout(timeout);
-			window.removeEventListener("scroll", handleScroll);
 		};
 	}, [prefersReducedMotion]);
 
@@ -69,10 +60,7 @@ const Nav: FC<navProps> = ({ isHome }) => {
 	);
 
 	return (
-		<StyledHeader
-			scrollDirection={scrollDirection}
-			scrolledToTop={scrolledToTop}
-		>
+		<StyledHeader>
 			<StyledNav>
 				{prefersReducedMotion ? (
 					<>
