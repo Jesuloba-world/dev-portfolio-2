@@ -28,40 +28,13 @@ const Layout: FC<layoutProps> = ({ children }) => {
 		}
 	};
 
-	const UseHash: (str: string) => void = (str) => {
-		if (str) {
-			const hash = str.split("#")[1];
-			setTimeout(() => {
-				const el = document.getElementById(hash);
-				if (el) {
-					el.scrollIntoView();
-					el.focus();
-				}
-			}, 0);
-		}
-		return;
-	};
-
 	useEffect(() => {
 		if (isLoading) {
 			return;
 		}
 
-		const onWindowHashChange = () => UseHash(window.location.hash);
-		const onNextJSHashChange: (url: string) => void = (url) => UseHash(url);
-
-		router.events.on("hashChangeStart", onNextJSHashChange);
-		window.addEventListener("hashchange", onWindowHashChange);
-		window.addEventListener("load", onWindowHashChange);
-
 		handleExternalLinks();
-
-		return () => {
-			router.events.off("hashChangeStart", onNextJSHashChange);
-			window.removeEventListener("load", onWindowHashChange);
-			window.removeEventListener("hashchange", onWindowHashChange);
-		};
-	}, [isLoading, router.events]);
+	}, [isLoading]);
 
 	return (
 		<>
