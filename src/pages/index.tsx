@@ -4,12 +4,12 @@ import {
 	Hero,
 	About,
 	Jobs,
-	// Featured,
+	Featured,
 	// Projects,
 	// Contact,
 } from "@/components";
 import { NextPage } from "next";
-import { jobs, getJobReturnType } from "@/lib/jobs";
+import { jobs, getJobReturnType, featured, getFeaturedReturnType } from "@/lib";
 
 const StyledMainContainer = styled.main`
 	counter-reset: section;
@@ -17,16 +17,18 @@ const StyledMainContainer = styled.main`
 
 interface homeProps {
 	allJobs: getJobReturnType[];
+	allFeatured: getFeaturedReturnType[];
 }
 
-const Home: NextPage<homeProps> = ({ allJobs }) => {
+const Home: NextPage<homeProps> = ({ allJobs, allFeatured }) => {
+
 	return (
 		<Layout>
 			<StyledMainContainer className="fillHeight">
 				<Hero />
 				<About />
 				<Jobs jobsData={allJobs} />
-				{/* <Featured /> */}
+				<Featured data={allFeatured} />
 				{/* <Projects /> */}
 				{/* <Contact /> */}
 			</StyledMainContainer>
@@ -36,9 +38,10 @@ const Home: NextPage<homeProps> = ({ allJobs }) => {
 
 export const getStaticProps = async () => {
 	const allJobs = jobs();
+	const allFeatured = featured();
 
 	return {
-		props: { allJobs },
+		props: { allJobs, allFeatured },
 	};
 };
 
