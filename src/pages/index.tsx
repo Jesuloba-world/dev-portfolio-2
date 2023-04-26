@@ -1,13 +1,5 @@
 import styled from "styled-components";
-import {
-	Layout,
-	Hero,
-	About,
-	Jobs,
-	Featured,
-	// Projects,
-	// Contact,
-} from "@/components";
+import { Layout, Hero, About, Jobs, Featured, Contact } from "@/components";
 import { NextPage } from "next";
 import { jobs, getJobReturnType, featured, getFeaturedReturnType } from "@/lib";
 
@@ -21,7 +13,6 @@ interface homeProps {
 }
 
 const Home: NextPage<homeProps> = ({ allJobs, allFeatured }) => {
-
 	return (
 		<Layout>
 			<StyledMainContainer className="fillHeight">
@@ -29,8 +20,7 @@ const Home: NextPage<homeProps> = ({ allJobs, allFeatured }) => {
 				<About />
 				<Jobs jobsData={allJobs} />
 				<Featured data={allFeatured} />
-				{/* <Projects /> */}
-				{/* <Contact /> */}
+				<Contact />
 			</StyledMainContainer>
 		</Layout>
 	);
