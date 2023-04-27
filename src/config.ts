@@ -74,7 +74,7 @@ export const srConfig = (delay = 200, viewFactor = 0.25) => ({
 });
 
 export const siteMetaData = {
-	defaultTitle: "John Needle",
+	defaultTitle: "Jesuloba",
 	defaultDescription:
 		"Software engineer specializing in techniques that optimize user experience",
 	siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
