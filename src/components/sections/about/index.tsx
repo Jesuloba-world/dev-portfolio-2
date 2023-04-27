@@ -40,13 +40,15 @@ const About = () => {
 				<StyledText>
 					<div>
 						<p>
-							Hello! My name is John (Jesuloba John Abere,
-							&ldquo;Needle&rdquo; is &ldquo;Abere&rdquo;
-							translated to english) and I enjoy creating
-							solutions that matter. My interest in coding started
-							back in 2017 when I decided to play as Goku in
-							GTA-SA — turns out hacking together multiple mods
-							taught me a lot about making things work!
+							Hello! My name is Jesuloba (Also known as{" "}
+							<a href="https://twitter.com/Jesuloba0_">
+								John Needle
+							</a>
+							) and I enjoy bringing visions to life with software
+							. My interest in coding started back in 2017 when I
+							decided to play as Goku in GTA-SA — turns out
+							hacking together multiple mods taught me a lot about
+							making things work!
 						</p>
 
 						<p>
@@ -68,7 +70,8 @@ const About = () => {
 								XCOM 2
 							</a>
 							, well modded of course, or reading about some weird
-							topic nobody cares about.
+							topic nobody cares about. I enjoy exploring ideas
+							and possibilities.
 						</p>
 
 						<p>

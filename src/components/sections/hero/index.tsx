@@ -19,8 +19,8 @@ const Hero = () => {
 	}, [prefersReducedMotion]);
 
 	const one = <h1>Hi, my name is</h1>;
-	const two = <h2 className="big-heading">John Needle.</h2>;
-	const three = <h3 className="big-heading">I create magic with code.</h3>;
+	const two = <h2 className="big-heading">Jesuloba Abere.</h2>;
+	const three = <h3 className="big-heading">I build software solutions.</h3>;
 	const four = (
 		<>
 			<p>
