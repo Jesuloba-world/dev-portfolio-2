@@ -13,7 +13,11 @@ import { usePrefersReducedMotion } from "@/hooks";
 import { getJobReturnType } from "@/lib/jobs";
 import ReactMarkdown from "react-markdown";
 
-type TabRef = { focus: () => void } | null;
+type TabRef = {
+	focus: () => void;
+	offsetWidth: number;
+	offsetLeft: number;
+} | null;
 type TabsRef = TabRef[];
 
 interface jobProps {
@@ -25,6 +29,10 @@ const Jobs: React.FC<jobProps> = ({ jobsData }) => {
 	const tabs = useRef<TabsRef>([]);
 	const revealContainer = useRef(null);
 	const prefersReducedMotion = usePrefersReducedMotion();
+	const [highlightPosition, setHighlightPosition] = useState({
+		left: 0,
+		width: 0,
+	});
 
 	useEffect(() => {
 		if (prefersReducedMotion) {
@@ -39,6 +47,14 @@ const Jobs: React.FC<jobProps> = ({ jobsData }) => {
 		}
 		animate();
 	}, [prefersReducedMotion]);
+
+	useEffect(() => {
+		const activeTab = tabs.current[activeTabId];
+		setHighlightPosition({
+			left: activeTab?.offsetLeft || 25 - 25,
+			width: activeTab?.offsetWidth || 0,
+		});
+	}, [activeTabId]);
 
 	return (
 		<StyledJobsSection id="jobs" ref={revealContainer}>
@@ -67,7 +83,10 @@ const Jobs: React.FC<jobProps> = ({ jobsData }) => {
 								</StyledTabButton>
 							);
 						})}
-					<StyledHighlight activeTabId={activeTabId} />
+					<StyledHighlight
+						activeTabId={activeTabId}
+						highlight={highlightPosition}
+					/>
 				</StyledTabList>
 
 				<StyledTabPanels>

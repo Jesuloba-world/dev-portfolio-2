@@ -92,7 +92,13 @@ export const StyledTabButton = styled.button<{ isActive: boolean }>`
 	}
 `;
 
-export const StyledHighlight = styled.div<{ activeTabId: number }>`
+export const StyledHighlight = styled.div<{
+	activeTabId: number;
+	highlight: {
+		left: number;
+		width: number;
+	};
+}>`
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -111,12 +117,10 @@ export const StyledHighlight = styled.div<{ activeTabId: number }>`
 		top: auto;
 		bottom: 0;
 		width: 100%;
-		max-width: var(--tab-width);
+		max-width: ${({ highlight }) => highlight.width}px;
 		height: 2px;
 		margin-left: 50px;
-		transform: translateX(
-			calc(${({ activeTabId }) => activeTabId} * var(--tab-width))
-		);
+		transform: translateX(${({ highlight }) => highlight.left}px);
 	}
 	@media (max-width: 480px) {
 		margin-left: 25px;
