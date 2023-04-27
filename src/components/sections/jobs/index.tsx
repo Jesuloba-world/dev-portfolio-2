@@ -51,7 +51,7 @@ const Jobs: React.FC<jobProps> = ({ jobsData }) => {
 	useEffect(() => {
 		const activeTab = tabs.current[activeTabId];
 		setHighlightPosition({
-			left: activeTab?.offsetLeft || 25 - 25,
+			left: (activeTab?.offsetLeft || 25) - 25,
 			width: activeTab?.offsetWidth || 0,
 		});
 	}, [activeTabId]);
