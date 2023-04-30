@@ -24,7 +24,6 @@ const Head: FC<headProps> = ({ title, description, image }) => {
 	const seo = {
 		title: title || defaultTitle,
 		description: description || defaultDescription,
-		// TODO: add an image when david prepares the lHead
 		image: `${siteUrl}${image || defaultImage}`,
 		url: `${siteUrl}${pathname}`,
 	};
