@@ -3,7 +3,7 @@ date: '2022-08-12'
 title: 'Software Engineer'
 company: 'Sidebrief'
 location: 'Delaware, US'
-range: 'Auguest 2022 - Present'
+range: 'August 2022 - Present'
 url: 'https://app.sidebrief.com/'
 ---
 - Collaborated with product managers and designers to create wireframes, mockups, and prototypes for new web applications, resulting in a 40% decrease in development time.

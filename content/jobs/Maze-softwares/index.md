@@ -3,7 +3,7 @@ date: '2021-06-18'
 title: 'Frontend Developer'
 company: 'Maze Softwares'
 location: 'Akure, Nigeria'
-range: 'June 2021 - August 2022'
+range: 'September 2020 - August 2022'
 url: 'https://mazesoftwares.com/'
 ---
 - Analyzed customer behavior to identify areas of improvement in the user experience, proposed solutions that increased customer satisfaction by 15%.
