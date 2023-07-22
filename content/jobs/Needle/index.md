@@ -1,11 +1,11 @@
 ---
 date: '2020-02-12'
-title: 'Software Engineering Intern'
-company: 'Needle inc.'
+title: 'Frontend Deveeloper'
+company: 'Freelance'
 location: 'Remote'
-range: 'February 2020 - September 2020'
+range: 'June 2019 - September 2020'
 url: '#'
 ---
 - Collaborated with cross-functional teams to integrate third-party APIs into existing systems, resulting in a 50% reduction in manual data entry errors.
-- Revamped CSS structure, reducing load time by 40% and improving user experience for the visitors.
-- Developed and implemented a suite of APIs using Python/Django, resulting in a 30% reduction in overall system latency and increasing API uptime by 15%.
+- Collaborated with UX designers to revamp the user interface of a flagship product, leading to a 25% decrease in user friction and a 15% increase in user engagement.
+- Led the successful implementation of an Agile development process in a team, resulting in a 30% reduction in time to market for new features and increased team productivity by 20% .

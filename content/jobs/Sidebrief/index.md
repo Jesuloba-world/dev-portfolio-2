@@ -6,7 +6,6 @@ location: 'Delaware, US'
 range: 'August 2022 - Present'
 url: 'https://app.sidebrief.com/'
 ---
-- Collaborated with product managers and designers to create wireframes, mockups, and prototypes for new web applications, resulting in a 40% decrease in development time.
-- Worked with cross-functional teams to identify and address key performance bottlenecks, resulting in a 30% improvement in page load times.
-- Developed robust, scalable, modular and API-centric infrastructures that resulted in a decrease of customer complaints by 30%.
-- Successfully recommended UI technologies and processes to ensure the versatility and quality of our user interfaces
+- Developed modern web applications that served both internal and external users, resulting in a 20% increase in user engagement and a 15% improvement in customer satisfaction ratings.
+- Scrutinized and made clear and informed decisions about technology and architecture choices, resulting in a 25% improvement in system efficiency and a 15% reduction in maintenance costs.
+- Mentored and supported other engineers on the team, leading to a 30% increase in their productivity and a 20% decrease in the time required to onboard new team members.

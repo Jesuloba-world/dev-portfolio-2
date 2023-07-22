@@ -6,7 +6,6 @@ location: 'Akure, Nigeria'
 range: 'September 2020 - August 2022'
 url: 'https://mazesoftwares.com/'
 ---
-- Analyzed customer behavior to identify areas of improvement in the user experience, proposed solutions that increased customer satisfaction by 15%.
-- Worked with cross-functional teams to streamline process and improve communication, resulting in a 10% increase in efficiency.
-- Successfully identified and fixed over 500 bugs in web applications to improve customer experience, resulting in a 5% increase in customer satisfaction.
-- Collaborated with UX designers and product managers to ensure creative proposals aligned with design best practices and stakeholder expectations.
+- Accomplished significant milestones by successfully designing major new features in an iterative, high-quality, and scalable way, resulting in a 30% increase in user engagement and a 20% improvement in customer satisfaction ratings.
+- Closely monitored the performance of the web stack, responding to system failures within minutes and achieving a 99.9% uptime, ensuring uninterrupted service for users.
+- Implemented responsive design principles into all web applications, optimizing mobile user experiences and increasing mobile traffic by 50%.
