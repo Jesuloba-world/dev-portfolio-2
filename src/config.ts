@@ -76,7 +76,7 @@ export const srConfig = (delay = 200, viewFactor = 0.25) => ({
 export const siteMetaData = {
 	defaultTitle: "Jesuloba Abere | Software Engineer",
 	defaultDescription:
-		"Software engineer specializing in techniques that optimize user experience",
+		"Software engineer specialized in techniques that optimize user experience",
 	siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
 	defaultImage: "images/seo_image.png",
 	twitterUsername: "@jesuloba0_",
