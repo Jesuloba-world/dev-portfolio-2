@@ -1,6 +1,6 @@
 ---
 date: '2020-02-12'
-title: 'Frontend Deveeloper'
+title: 'Frontend Developer'
 company: 'Freelance'
 location: 'Remote'
 range: 'June 2019 - September 2020'
