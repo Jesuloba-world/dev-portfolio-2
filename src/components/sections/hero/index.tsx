@@ -24,9 +24,9 @@ const Hero = () => {
 	const four = (
 		<>
 			<p>
-				I&apos;m a software engineer specializing in techniques that
-				optimize user experience, creating digital solutions that are
-				intuitive, accessible, and effective.
+				Software engineer specialized in techniques that optimize user
+				experience, creating digital solutions that are intuitive,
+				accessible, and effective.
 			</p>
 		</>
 	);

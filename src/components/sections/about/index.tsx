@@ -40,40 +40,39 @@ const About = () => {
 				<StyledText>
 					<div>
 						<p>
-							Hello! My name is Jesuloba (Also known as{" "}
+							Hello, I&apos;m Jesuloba, also known as{" "}
 							<a href="https://twitter.com/Jesuloba0_">
 								John Needle
 							</a>
-							) and I enjoy bringing visions to life with software
-							. My interest in coding started back in 2017 when I
-							decided to play as Goku in GTA-SA — turns out
-							hacking together multiple mods taught me a lot about
-							making things work!
+							. I am a dedicated software developer with a passion
+							for bringing ideas to life through technology. My
+							journey in coding began in 2017 when I delved into
+							the world of software modification, which sparked my
+							fascination with creating functional and innovative
+							solutions.
 						</p>
-
 						<p>
-							Fast-forward to today, and I&apos;ve had the
-							privilege of working at{" "}
+							I have had the privilege of contributing to projects
+							at a{" "}
 							<a href="https://mazesoftwares.com/">
 								a student-led design studio
 							</a>{" "}
-							and currently working at{" "}
-							<a href={"http://sidebrief.com/"}>Sidebrief</a>. My
-							main focus these days is picking up{" "}
-							<a href="https://go.dev/">Golang</a> and getting
-							into the devops and cloud space.
+							and am currently engaged at{" "}
+							<a href={"http://sidebrief.com/"}>Sidebrief</a>. I
+							am also actively working towards achieving my Azure
+							certification to further solidify my expertise in
+							cloud technologies.
 						</p>
-
 						<p>
-							When I&apos;m not coding you&apos;ll find me playing{" "}
+							When I&apos;m not immersed in code, I enjoy
+							immersing myself in well-modded games like{" "}
 							<a href="https://store.steampowered.com/app/268500/XCOM_2/">
 								XCOM 2
-							</a>
-							, well modded of course, or reading about some weird
-							topic nobody cares about. I enjoy exploring ideas
-							and possibilities.
+							</a>{" "}
+							or delving into obscure yet fascinating topics
+							through reading. I thrive on exploring new ideas and
+							pushing the boundaries of what&apos;s possible.
 						</p>
-
 						<p>
 							Here are a few technologies I&apos;ve been working
 							with recently:
