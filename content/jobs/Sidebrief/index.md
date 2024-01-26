@@ -1,6 +1,6 @@
 ---
 date: '2022-08-12'
-title: 'Software Engineer'
+title: 'Frontend Engineer'
 company: 'Sidebrief'
 location: 'Delaware, US'
 range: 'August 2022 - Present'
