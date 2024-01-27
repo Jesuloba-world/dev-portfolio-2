@@ -28,7 +28,7 @@ const Contact = () => {
 			<h2 className="title">Get In Touch</h2>
 
 			<p>
-				Looking for a Software engineer, have any questions or just want
+				Looking for a Software engineer? have any questions or just want
 				to say hi, feel free to reach out. I look forward to hearing
 				from you.
 			</p>

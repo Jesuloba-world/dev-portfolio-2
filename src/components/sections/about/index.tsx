@@ -57,7 +57,7 @@ const About = () => {
 							<a href="https://mazesoftwares.com/">
 								a student-led design studio
 							</a>{" "}
-							and am currently engaged at{" "}
+							and currently engaged at{" "}
 							<a href={"http://sidebrief.com/"}>Sidebrief</a>. I
 							am also actively working towards achieving my Azure
 							certification to further solidify my expertise in
