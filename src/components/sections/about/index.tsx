@@ -65,7 +65,7 @@ const About = () => {
 						</p>
 						<p>
 							When I&apos;m not immersed in code, I enjoy
-							immersing myself in well-modded games like{" "}
+							immersing myself in games like{" "}
 							<a href="https://store.steampowered.com/app/268500/XCOM_2/">
 								XCOM 2
 							</a>{" "}
