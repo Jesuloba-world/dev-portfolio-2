@@ -55,7 +55,7 @@ const About = () => {
 							I have had the privilege of contributing to projects
 							at a{" "}
 							<a href="https://mazesoftwares.com/">
-								a student-led design studio
+								a software development agency
 							</a>{" "}
 							and currently engaged at{" "}
 							<a href={"http://sidebrief.com/"}>Sidebrief</a>. I
