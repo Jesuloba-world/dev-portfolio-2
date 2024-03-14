@@ -78,6 +78,6 @@ export const siteMetaData = {
 	defaultDescription:
 		"Software engineer specialized in techniques that optimize user experience",
 	siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
-	defaultImage: "images/seo_image.png",
+	defaultImage: "/images/seo_image.png",
 	twitterUsername: "@jesuloba0_",
 };
