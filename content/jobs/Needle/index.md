@@ -1,6 +1,6 @@
 ---
 date: '2020-06-18'
-title: 'Software Engineering Intern'
+title: 'Frontend developer'
 company: 'Needle inc.'
 location: 'Nigeria'
 range: 'February 2020 - September 2020'
