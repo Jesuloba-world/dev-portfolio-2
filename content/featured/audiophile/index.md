@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '2'
 title: 'Audiophile'
 cover: '/images/featured/audiophile.webp'
 github: 'https://github.com/Jesuloba-world/audiophile'
