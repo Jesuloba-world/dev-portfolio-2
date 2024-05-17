@@ -27,8 +27,8 @@ const About = () => {
 		"Next.js",
 		"TypeScript",
 		"React (Native)",
+		"Golang",
 		"Django",
-		"Node.js",
 		"Graphql",
 	];
 
@@ -40,7 +40,7 @@ const About = () => {
 				<StyledText>
 					<div>
 						<p>
-							Hello, I&apos;m Jesuloba, also known as{" "}
+							Hello, I&apos;m Jesuloba, my friends call me{" "}
 							<a href="https://twitter.com/Jesuloba0_">
 								John Needle
 							</a>
