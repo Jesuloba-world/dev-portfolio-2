@@ -3,7 +3,7 @@ date: '2022-08-12'
 title: 'Frontend Engineer'
 company: 'Sidebrief'
 location: 'Delaware, US'
-range: 'August 2022 - Present'
+range: 'August 2022 - February 2024'
 url: 'https://www.sidebrief.com/'
 ---
 - Developed modern web applications that served both internal and external users, resulting in a 20% increase in user engagement and a 15% improvement in customer satisfaction ratings.

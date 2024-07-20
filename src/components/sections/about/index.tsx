@@ -76,14 +76,6 @@ const About = () => {
 							I&apos;ve been diving into blockchain and
 							cloud-native architectures, always eager to tackle
 							new challenges in our ever-evolving tech landscape.
-							{/* When I&apos;m not immersed in code, I enjoy
-							immersing myself in games like{" "}
-							<a href="https://store.steampowered.com/app/268500/XCOM_2/">
-								XCOM 2
-							</a>{" "}
-							or delving into obscure yet fascinating topics
-							through reading. I thrive on exploring new ideas and
-							pushing the boundaries of what&apos;s possible. */}
 						</p>
 						<p>
 							Here are a few technologies I&apos;ve been working
