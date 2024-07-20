@@ -40,38 +40,50 @@ const About = () => {
 				<StyledText>
 					<div>
 						<p>
-							Hello, I&apos;m Jesuloba, my friends call me{" "}
+							Hello, I&apos;m Jesuloba, though friends know me as{" "}
 							<a href="https://twitter.com/Jesuloba0_">
 								John Needle
 							</a>
-							. I am a dedicated software developer with a passion
-							for bringing ideas to life through technology. My
-							journey in coding began in 2017 when I delved into
-							the world of software modification, which sparked my
-							fascination with creating functional and innovative
-							solutions.
+							. I&apos;m passionate about bringing ideas to life
+							through technology. My journey into software
+							development kicked off in 2017 when I dived into the
+							world of software modification — it turns out that
+							tweaking existing programs taught me a lot about the
+							intricacies of coding and sparked my love for
+							creating innovative solutions!
 						</p>
 						<p>
-							I have had the privilege of contributing to projects
-							at a{" "}
+							Today, I&apos;m a Software Engineer at{" "}
+							<a href="https://nvisionhr.com/">NvisionHr</a>,
+							architecting scalable backend systems and
+							microservices using Go, React, and Python. I&apos;ve
+							had the privilege of working at a{" "}
 							<a href="https://mazesoftwares.com/">
-								a software development agency
+								software agency
 							</a>{" "}
-							and currently engaged at{" "}
-							<a href={"http://sidebrief.com/"}>Sidebrief</a>. I
-							am also actively working towards achieving my Azure
-							certification to further solidify my expertise in
-							cloud technologies.
+							and a <a href={"https://sidebrief.com/"}>startup</a>
+							, constantly pushing the boundaries of what&apos;s
+							possible in tech.
 						</p>
 						<p>
-							When I&apos;m not immersed in code, I enjoy
+							When I&apos;m not coding, you&apos;ll find me
+							strategizing in{" "}
+							<a href="https://store.steampowered.com/app/268500/XCOM_2/">
+								XCOM 2
+							</a>{" "}
+							or exploring obscure topics. These diverse interests
+							fuel my creativity in unexpected ways. Recently,
+							I&apos;ve been diving into blockchain and
+							cloud-native architectures, always eager to tackle
+							new challenges in our ever-evolving tech landscape.
+							{/* When I&apos;m not immersed in code, I enjoy
 							immersing myself in games like{" "}
 							<a href="https://store.steampowered.com/app/268500/XCOM_2/">
 								XCOM 2
 							</a>{" "}
 							or delving into obscure yet fascinating topics
 							through reading. I thrive on exploring new ideas and
-							pushing the boundaries of what&apos;s possible.
+							pushing the boundaries of what&apos;s possible. */}
 						</p>
 						<p>
 							Here are a few technologies I&apos;ve been working
