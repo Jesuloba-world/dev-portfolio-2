@@ -1,5 +1,5 @@
 ---
-date: '3'
+date: '4'
 title: 'Designo'
 cover: '/images/featured/designo.webp'
 github: 'https://github.com/Jesuloba-world/Designo'
