@@ -46,10 +46,12 @@ const Head: FC<headProps> = ({ title, description, image }) => {
 			<meta name="twitter:description" content={seo.description} />
 			<meta name="twitter:image" content={seo.image} />
 
+			{/*
 			<meta
 				name="google-site-verification"
 				content="eQSIffyw13icguPew6YxwD4ApPwSGwf254SpSDUb_hY"
 			/>
+			*/}
 		</SEO>
 	);
 };

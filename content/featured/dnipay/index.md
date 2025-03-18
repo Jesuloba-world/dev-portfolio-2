@@ -7,6 +7,7 @@ cover: '/images/featured/dnipay.png'
 tech:
   - Go
   - Chi
+  - Huma
   - MySql
   - Fintech
 ---
