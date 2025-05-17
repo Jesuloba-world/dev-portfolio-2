@@ -1,11 +1,9 @@
 ---
-date: '2021-06-18'
-title: 'Full-stack Developer'
-company: 'Maze Softwares'
-location: 'Akure, Nigeria'
-range: 'September 2020 - August 2022'
-url: 'https://mazesoftwares.com/'
+date: '2019-08-01'
+title: 'Full Stack Developer'
+company: 'Maze-Software'
+range: 'Aug 2019 – Sep 2021'
 ---
-- Accomplished significant milestones by successfully designing major new features in an iterative, high-quality, and scalable way, resulting in a 30% increase in user engagement and a 20% improvement in customer satisfaction ratings.
-- Closely monitored the performance of the web stack, responding to system failures within minutes and achieving a 99.9% uptime, ensuring uninterrupted service for users.
-- Developed and implemented a suite of APIs using Python/Django, resulting in a 30% reduction in overall system latency and increasing API uptime by 10%.
+- Built scalable backend services with Django and PostgreSQL, applying optimized query structuring and caching techniques that improved database performance by 45%.
+- Developed responsive user interfaces with React and Redux, improving frontend performance and reduced load times by 40%.
+- Designed and implemented REST APIs with layered caching using Redis, lowering server response times by 25%.

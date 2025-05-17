@@ -1,11 +1,12 @@
 ---
-date: '2022-08-12'
+date: '2021-10-01'
 title: 'Frontend Engineer'
 company: 'Sidebrief'
 location: 'Delaware, US'
-range: 'August 2022 - February 2024'
+range: 'Oct 2021 – Jul 2023'
 url: 'https://www.sidebrief.com/'
 ---
-- Developed modern web applications that served both internal and external users, resulting in a 20% increase in user engagement and a 15% improvement in customer satisfaction ratings.
-- Scrutinized and made clear and informed decisions about technology and architecture choices, resulting in a 25% improvement in system efficiency and a 15% reduction in maintenance costs.
-- Mentored and supported other engineers on the team, leading to a 30% increase in their productivity and a 20% decrease in the time required to onboard new team members.
+- Delivered TypeScript-based React apps using reusable components and performance best practices, enabling the product to scale to over 1 million users.
+- Introduced Zustand and lazy loading for heavy components, reducing application load time by 40%.
+- Integrated REST and GraphQL endpoints which improved frontend-backend data syncing and reduced bugs during handoffs.
+- Contributed to microservices architecture by designing isolated UI modules, allowing for independent deployments and reducing inter-team friction.

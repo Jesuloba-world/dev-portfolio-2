@@ -1,12 +1,10 @@
 ---
-date: '2024-02-16'
-title: 'Backend Engineer'
+date: '2023-08-01'
+title: 'Backend Engineer (Contract)'
 company: 'NvisionHr'
-location: 'Florida, US'
-range: 'February 2024 - Present'
-url: 'https://nvisionhr.com/'
+range: 'Aug 2023 – Jan 2024'
 ---
-- Designed and built scalable backend systems using Go, improving application performance by 35% and reducing response times by 20%.
-- Engineered GraphQL APIs and microservices, leveraging Go's concurrency features for optimal performance, handling over 10,000 requests per minute with less than 1% failure rate.
-- Utilized gRPC and Kafka for efficient inter-service communication, reducing latency by 40% and improving system reliability.
-- Enhanced DevOps processes, including CI/CD pipelines, infrastructure provisioning, and monitoring using Docker and Terraform, resulting in 60% faster deployment times
+- Designed and implemented Go-based data processing services, applying batching and parallelism, which increased system throughput by 35%.
+- Adopted gRPC for internal service communication and Kafka for event streaming, which reduced service-to-service latency by 40%.
+- Improved data access speed by optimizing PostgreSQL and MongoDB queries through strategic indexing and schema design, cutting query times in half for key endpoints.
+- Streamlined the release process by implementing CI/CD pipelines with Docker and Kubernetes, reducing deployment times by 60% and improving team delivery speed.
