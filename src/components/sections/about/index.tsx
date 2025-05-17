@@ -51,7 +51,7 @@ const About = () => {
 							building impactful solutions.
 						</p>
 						<p>
-							Currently, as a Senior Backend Engineer at{" "}
+							Currently, as a Backend Engineer at{" "}
 							<a href="https://dnipay.ng/">DNIpay</a>, I build
 							high-throughput Go transaction pipelines and robust
 							deployment automation. Previously, as Lead Frontend
