@@ -43,4 +43,8 @@ export const StyledHeroSection = styled.section`
 		${({ theme }) => theme.mixins.bigButton};
 		margin-top: 50px;
 	}
+
+	.description {
+		margin-top: 30px;
+	}
 `;

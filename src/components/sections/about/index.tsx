@@ -24,12 +24,12 @@ const About = () => {
 	}, [prefersReducedMotion]);
 
 	const skills = [
-		"Next.js",
+		"Go (Golang)",
+		"React",
 		"TypeScript",
-		"React (Native)",
-		"Golang",
-		"Django",
-		"Graphql",
+		"Node.js (with NestJS)",
+		"Python (with Django)",
+		"PostgreSQL",
 	];
 
 	return (
@@ -40,42 +40,49 @@ const About = () => {
 				<StyledText>
 					<div>
 						<p>
-							Hello, I&apos;m Jesuloba, though friends know me as{" "}
+							Hello! I&apos;m Jesuloba Abere (friends call me{" "}
 							<a href="https://twitter.com/Jesuloba0_">
 								John Needle
 							</a>
-							. I&apos;m passionate about bringing ideas to life
-							through technology. My journey into software
-							development kicked off in 2017 when I dived into the
-							world of software modification — it turns out that
-							tweaking existing programs taught me a lot about the
-							intricacies of coding and sparked my love for
-							creating innovative solutions!
+							), a software engineer passionate about transforming
+							ideas into innovative and effective software. My
+							tech journey, sparked in 2017 by software
+							modification, ignited my love for coding and
+							building impactful solutions.
 						</p>
 						<p>
-							Today, I&apos;m a Software Engineer at{" "}
-							<a href="https://nvisionhr.com/">NvisionHr</a>,
-							architecting scalable backend systems and
-							microservices using Go, React, and Python. I&apos;ve
-							had the privilege of working at a{" "}
-							<a href="https://mazesoftwares.com/">
-								software agency
-							</a>{" "}
-							and a <a href={"https://sidebrief.com/"}>startup</a>
-							, constantly pushing the boundaries of what&apos;s
-							possible in tech.
+							Currently, as a Senior Backend Engineer at{" "}
+							<a href="https://dnipay.ng/">DNIpay</a>, I build
+							high-throughput Go transaction pipelines and robust
+							deployment automation. Previously, as Lead Frontend
+							Engineer at{" "}
+							<a href="https://www.heyfood.africa/">Heyfood</a>, I
+							spearheaded a TypeScript migration and rebuilt core
+							logic, significantly enhancing performance. My
+							full-stack experience includes architecting scalable
+							backend services (Go, Node.js, Django) capable of
+							handling millions of requests, leading migrations,
+							and improving system performance with CI/CD (Docker,
+							Kubernetes) and technologies like GraphQL,
+							PostgreSQL, and various data stores.
 						</p>
 						<p>
-							When I&apos;m not coding, you&apos;ll find me
-							strategizing in{" "}
+							Beyond coding, I enjoy strategizing in{" "}
 							<a href="https://store.steampowered.com/app/268500/XCOM_2/">
 								XCOM 2
 							</a>{" "}
-							or exploring obscure topics. These diverse interests
-							fuel my creativity in unexpected ways. Recently,
-							I&apos;ve been diving into blockchain and
-							cloud-native architectures, always eager to tackle
-							new challenges in our ever-evolving tech landscape.
+							and exploring diverse topics that fuel my
+							creativity. I&apos;m constantly learning, currently
+							diving into blockchain and cloud-native
+							architectures, always eager to tackle new tech
+							challenges.
+						</p>
+						<p>
+							<strong>
+								I&apos;m passionate about building things that
+								matter. Let&apos;s connect and discuss how we
+								can create something impactful together!
+							</strong>
 						</p>
 						<p>
 							Here are a few technologies I&apos;ve been working

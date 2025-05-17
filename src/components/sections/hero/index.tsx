@@ -18,17 +18,14 @@ const Hero = () => {
 		return () => clearTimeout(timeout);
 	}, [prefersReducedMotion]);
 
-	const one = <h1>Hi, my name is</h1>;
+	// const one = <h1>Hi, my name is</h1>;
 	const two = <h2 className="big-heading">Jesuloba Abere.</h2>;
-	const three = (
-		<h3 className="big-heading">I transform ideas into software.</h3>
-	);
+	const three = <h3 className="big-heading">Software Engineer.</h3>;
 	const four = (
 		<>
-			<p>
-				Software engineer specialized in techniques that optimize user
-				experience, creating digital solutions that are intuitive,
-				accessible, and effective.
+			<p className="description">
+				I build innovative and scalable software solutions that bring
+				ideas to life.
 			</p>
 		</>
 	);
@@ -43,7 +40,7 @@ const Hero = () => {
 		</Link>
 	);
 
-	const items = [one, two, three, four, five];
+	const items = [two, three, four, five];
 
 	return (
 		<StyledHeroSection>
