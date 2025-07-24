@@ -40,7 +40,7 @@ const About = () => {
 				<StyledText>
 					<div>
 						<p>
-							Hello! I&apos;m Jesuloba Abere (friends call me{" "}
+							Hello! I&apos;m Jesuloba M. Abere (friends call me{" "}
 							<a href="https://twitter.com/Jesuloba0_">
 								John Needle
 							</a>
