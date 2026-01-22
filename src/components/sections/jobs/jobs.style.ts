@@ -88,7 +88,7 @@ export const StyledTabButton = styled.button<{ $isActive: boolean }>`
 
 	&:hover,
 	&:focus {
-		background-color: var(--light-navy);
+		background-color: var(--green-tint);
 	}
 `;
 

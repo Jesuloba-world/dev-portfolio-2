@@ -155,7 +155,7 @@ const Menu = () => {
 							</ol>
 						)}
 
-						<a href="/resume.pdf" className="resume-link">
+						<a href="https://v4.rxresu.me/jesulobajohn/senior-software-engineer" className="resume-link">
 							Resume
 						</a>
 					</nav>

@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
 	padding: 0px 50px;
 	width: 100%;
 	height: var(--nav-height);
-	background-color: rgba(10, 25, 47, 0.85);
+	background-color: rgba(15, 23, 42, 0.85);
 	filter: none !important;
 	pointer-events: auto !important;
 	user-select: auto !important;
@@ -59,6 +59,8 @@ export const StyledNav = styled.nav`
 export const StyledLinks = styled.div`
 	display: flex;
 	align-items: center;
+	margin-left: auto;
+	justify-content: flex-end;
 
 	@media (max-width: 768px) {
 		display: none;
@@ -80,11 +82,7 @@ export const StyledLinks = styled.div`
 				padding: 10px;
 
 				&:before {
-					content: "0" counter(item) ".";
-					margin-right: 5px;
-					color: var(--green);
-					font-size: var(--fz-xxs);
-					text-align: right;
+					display: none;
 				}
 			}
 		}

@@ -19,8 +19,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: var(--lightest-navy);
-    color: var(--lightest-slate);
+    background-color: var(--green);
+    color: var(--navy);
   }
 
   /* Provide basic, default focus styles.*/
@@ -185,23 +185,6 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     font-size: clamp(26px, 5vw, var(--fz-heading));
     white-space: nowrap;
-
-    &:before {
-      position: relative;
-      bottom: 4px;
-      counter-increment: section;
-      content: '0' counter(section) '.';
-      margin-right: 10px;
-      color: var(--green);
-      font-family: var(--font-mono);
-      font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
-      font-weight: 400;
-
-      @media (max-width: 480px) {
-        margin-bottom: -3px;
-        margin-right: 5px;
-      }
-    }
 
     &:after {
       content: '';

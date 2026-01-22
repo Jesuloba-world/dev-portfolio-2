@@ -17,7 +17,7 @@ const Nav: FC<navProps> = ({ isHome }) => {
 	const [isMounted, setIsMounted] = useState(!isHome);
 	const prefersReducedMotion = usePrefersReducedMotion();
 	const navItemRefs = useRef<Record<string, RefObject<HTMLLIElement | null>>>(
-		{}
+		{},
 	);
 	const logoRef = useRef<HTMLDivElement>(null);
 	const resumeRef = useRef<HTMLDivElement>(null);
@@ -65,7 +65,7 @@ const Nav: FC<navProps> = ({ isHome }) => {
 	const ResumeLink = (
 		<a
 			className="resume-button"
-			href="/resume.pdf"
+			href="https://v4.rxresu.me/jesulobajohn/senior-software-engineer"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
@@ -83,10 +83,10 @@ const Nav: FC<navProps> = ({ isHome }) => {
 						<StyledLinks>
 							<ol>
 								{navLinks?.map(({ url, name }) => (
-										<li key={name}>
-											<Link href={url}>{name}</Link>
-										</li>
-									))}
+									<li key={name}>
+										<Link href={url}>{name}</Link>
+									</li>
+								))}
 							</ol>
 							<div>{ResumeLink}</div>
 						</StyledLinks>
@@ -113,7 +113,8 @@ const Nav: FC<navProps> = ({ isHome }) => {
 									{isMounted &&
 										navLinks &&
 										navLinks.map(({ url, name }, i) => {
-											const navItemRef = getNavItemRef(name);
+											const navItemRef =
+												getNavItemRef(name);
 
 											return (
 												<CSSTransition

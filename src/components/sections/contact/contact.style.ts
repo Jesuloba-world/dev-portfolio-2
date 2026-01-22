@@ -17,11 +17,6 @@ export const StyledContactSection = styled.section`
 		font-size: var(--fz-md);
 		font-weight: 400;
 
-		&:before {
-			bottom: 0;
-			font-size: var(--fz-sm);
-		}
-
 		&:after {
 			display: none;
 		}
@@ -29,6 +24,10 @@ export const StyledContactSection = styled.section`
 
 	.title {
 		font-size: clamp(40px, 5vw, 60px);
+        background: linear-gradient(135deg, var(--green) 0%, var(--blue) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
 	}
 
 	.email-link {

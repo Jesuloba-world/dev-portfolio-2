@@ -27,9 +27,17 @@ export const StyledHeroSection = styled.section`
 		}
 	}
 
+    h2.big-heading {
+        background: linear-gradient(135deg, var(--green) 0%, var(--blue) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        width: fit-content;
+    }
+
 	h3 {
 		margin-top: 5px;
-		color: var(--slate);
+		color: var(--light-slate);
 		line-height: 0.9;
 	}
 
@@ -37,6 +45,8 @@ export const StyledHeroSection = styled.section`
 		margin: 20px 0 0;
 		max-width: 540px;
 		font-family: var(--font-sans);
+        font-size: var(--fz-lg);
+        line-height: 1.6;
 	}
 
 	.email-link {

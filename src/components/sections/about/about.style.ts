@@ -15,9 +15,9 @@ export const StyledAboutSection = styled.section`
 `;
 export const StyledText = styled.div`
 	ul.skills-list {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(140px, 200px));
-		grid-gap: 0 10px;
+		display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
 		padding: 0;
 		margin: 20px 0 0 0;
 		overflow: hidden;
@@ -25,19 +25,19 @@ export const StyledText = styled.div`
 
 		li {
 			position: relative;
-			margin-bottom: 10px;
-			padding-left: 20px;
+			padding: 8px 16px;
 			font-family: var(--font-mono);
 			font-size: var(--fz-xs);
+            background: var(--green-tint);
+            color: var(--green);
+            border: 1px solid var(--green);
+            border-radius: 20px;
+            transition: var(--transition);
 
-			&:before {
-				content: "▹";
-				position: absolute;
-				left: 0;
-				color: var(--green);
-				font-size: var(--fz-sm);
-				line-height: 12px;
-			}
+            &:hover {
+                background: rgba(56, 189, 248, 0.2);
+                transform: translateY(-2px);
+            }
 		}
 	}
 `;
@@ -56,32 +56,30 @@ export const StyledPic = styled.div`
 		position: relative;
 		width: 100%;
 		border-radius: var(--border-radius);
-		background-color: var(--green);
+		background-color: transparent;
 
 		&:hover,
 		&:focus {
 			outline: 0;
 
 			&:after {
-				top: 15px;
-				left: 15px;
-			}
-
-			.img {
-				filter: none;
-				mix-blend-mode: normal;
+				top: 10px;
+				left: 10px;
 			}
 		}
 
 		.img {
 			position: relative;
 			border-radius: var(--border-radius);
-			mix-blend-mode: multiply;
-			filter: grayscale(100%) contrast(1);
+			mix-blend-mode: normal;
+			filter: none;
 			transition: var(--transition);
 		}
 
-		&:before,
+		&:before {
+			display: none;
+		}
+
 		&:after {
 			content: "";
 			display: block;
@@ -90,19 +88,9 @@ export const StyledPic = styled.div`
 			height: 100%;
 			border-radius: var(--border-radius);
 			transition: var(--transition);
-		}
-
-		&:before {
-			top: 0;
-			left: 0;
-			background-color: var(--navy);
-			mix-blend-mode: screen;
-		}
-
-		&:after {
-			border: 2px solid var(--green);
-			top: 20px;
-			left: 20px;
+            border: 2px solid var(--green);
+			top: 15px;
+			left: 15px;
 			z-index: -1;
 		}
 	}

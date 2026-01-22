@@ -150,7 +150,9 @@ export const StyledProject = styled.li`
 		z-index: 2;
 		padding: 25px;
 		border-radius: var(--border-radius);
-		background-color: var(--light-navy);
+		background-color: rgba(15, 23, 42, 0.9);
+		backdrop-filter: blur(10px);
+		border: 1px solid var(--light-navy);
 		color: var(--light-slate);
 		font-size: var(--fz-lg);
 
@@ -158,6 +160,8 @@ export const StyledProject = styled.li`
 			padding: 20px 0;
 			background-color: transparent;
 			box-shadow: none;
+			border: none;
+			backdrop-filter: none;
 
 			&:hover {
 				box-shadow: none;
@@ -249,7 +253,7 @@ export const StyledProject = styled.li`
 		a {
 			width: 100%;
 			height: 100%;
-			background-color: var(--green);
+			background-color: transparent;
 			border-radius: var(--border-radius);
 			vertical-align: middle;
 
@@ -266,25 +270,14 @@ export const StyledProject = styled.li`
 			}
 
 			&:before {
-				content: "";
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				z-index: 3;
-				transition: var(--transition);
-				background-color: var(--navy);
-				mix-blend-mode: screen;
+				display: none;
 			}
 		}
 
 		.img {
 			border-radius: var(--border-radius);
-			mix-blend-mode: multiply;
-			filter: grayscale(100%) contrast(1) brightness(90%);
+			mix-blend-mode: normal;
+			filter: none;
 
 			@media (max-width: 768px) {
 				object-fit: cover;

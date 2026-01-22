@@ -16,7 +16,8 @@ const button = css`
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: var(--green-tint);
+		background-color: var(--green);
+		color: var(--navy);
 		outline: none;
 	}
 	&:after {
@@ -102,7 +103,8 @@ const mixins = {
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: var(--green-tint);
+			background-color: var(--green);
+			color: var(--navy);
 			outline: none;
 		}
 		&:after {
@@ -125,7 +127,8 @@ const mixins = {
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: var(--green-tint);
+			background-color: var(--green);
+			color: var(--navy);
 			outline: none;
 		}
 		&:after {
