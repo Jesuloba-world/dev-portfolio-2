@@ -25,11 +25,17 @@ const About = () => {
 
 	const skills = [
 		"Go (Golang)",
-		"React",
 		"TypeScript",
-		"Node.js (with NestJS)",
-		"Python (with Django)",
+		"Node.js",
+		"Nest.js",
+		"React",
+		"Next.js",
 		"PostgreSQL",
+		"Docker",
+		"Kubernetes",
+		"AWS",
+		"gRPC",
+		"Redis",
 	];
 
 	return (
@@ -40,49 +46,26 @@ const About = () => {
 				<StyledText>
 					<div>
 						<p>
-							Hello! I&apos;m Jesuloba Abere (friends call me{" "}
-							<a href="https://twitter.com/Jesuloba0_">
-								John Needle
-							</a>
-							), a software engineer passionate about transforming
-							ideas into innovative and effective software. My
-							tech journey, sparked in 2017 by software
-							modification, ignited my love for coding and
-							building impactful solutions.
+							Hello! I&apos;m Jesuloba Abere, a Senior Software
+							Engineer with 6+ years of experience building
+							high-volume fintech platforms and complex SaaS
+							products. I specialize in designing scalable backend
+							architectures using Go and Nest.js while retaining
+							the full-stack capability to deliver polished user
+							experiences.
 						</p>
 						<p>
-							Currently, as a Backend Engineer at{" "}
-							<a href="https://dnipay.ng/">DNIpay</a>, I build
-							high-throughput Go transaction pipelines and robust
-							deployment automation. Previously, as Lead Frontend
-							Engineer at{" "}
-							<a href="https://www.heyfood.africa/">Heyfood</a>, I
-							spearheaded a TypeScript migration and rebuilt core
-							logic, significantly enhancing performance. My
-							full-stack experience includes architecting scalable
-							backend services (Go, Node.js, Django) capable of
-							handling millions of requests, leading migrations,
-							and improving system performance with CI/CD (Docker,
-							Kubernetes) and technologies like GraphQL,
-							PostgreSQL, and various data stores.
+							I have a proven track record of engineering robust
+							financial transaction engines and architecting email
+							marketing solutions from scratch. My expertise spans
+							across the entire software development lifecycle,
+							from system architecture to deployment and
+							optimization.
 						</p>
 						<p>
-							Beyond coding, I enjoy strategizing in{" "}
-							<a href="https://store.steampowered.com/app/268500/XCOM_2/">
-								XCOM 2
-							</a>{" "}
-							and exploring diverse topics that fuel my
-							creativity. I&apos;m constantly learning, currently
-							diving into blockchain and cloud-native
-							architectures, always eager to tackle new tech
-							challenges.
-						</p>
-						<p>
-							<strong>
-								I&apos;m passionate about building things that
-								matter. Let&apos;s connect and discuss how we
-								can create something impactful together!
-							</strong>
+							Currently, I&apos;m focused on building scalable
+							solutions and exploring new technologies to solve
+							complex problems.
 						</p>
 						<p>
 							Here are a few technologies I&apos;ve been working
