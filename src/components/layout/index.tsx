@@ -1,4 +1,5 @@
-import { useState, useEffect, FC, ReactNode } from "react";
+import { useState, useEffect, useCallback } from "react";
+import type { FC, ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
 import { Loader, Nav, Social, Email, Footer, Head } from "@/components";
 import { GlobalStyle, theme } from "@/styles";
@@ -16,7 +17,7 @@ const Layout: FC<layoutProps> = ({ children }) => {
 	const [isLoading, setIsLoading] = useState(isHome);
 
 	// Sets target="_blank" rel="noopener noreferrer" on external links
-	const handleExternalLinks = () => {
+	const handleExternalLinks = useCallback(() => {
 		const allLinks = Array.from(document.querySelectorAll("a"));
 		if (allLinks.length > 0) {
 			allLinks.forEach((link) => {
@@ -26,7 +27,7 @@ const Layout: FC<layoutProps> = ({ children }) => {
 				}
 			});
 		}
-	};
+	}, []);
 
 	useEffect(() => {
 		if (isLoading) {
@@ -34,7 +35,7 @@ const Layout: FC<layoutProps> = ({ children }) => {
 		}
 
 		handleExternalLinks();
-	}, [isLoading]);
+	}, [isLoading, handleExternalLinks]);
 
 	return (
 		<>
@@ -49,9 +50,7 @@ const Layout: FC<layoutProps> = ({ children }) => {
 					</a>
 
 					{isLoading && isHome ? (
-						<>
-							<Loader finishLoading={() => setIsLoading(false)} />
-						</>
+						<Loader finishLoading={() => setIsLoading(false)} />
 					) : (
 						<StyledContent>
 							<Headroom>

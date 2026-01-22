@@ -1,4 +1,5 @@
-import React, { useState, useEffect, ReactNode, FC } from "react";
+import { useState, useEffect, useRef } from "react";
+import type { ReactNode, FC } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { loaderDelay } from "@/utils";
 import { usePrefersReducedMotion } from "@/hooks";
@@ -13,6 +14,7 @@ interface sideProps {
 const Side: FC<sideProps> = ({ children, isHome, orientation }) => {
 	const [isMounted, setIsMounted] = useState(!isHome);
 	const prefersReducedMotion = usePrefersReducedMotion();
+	const nodeRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		if (!isHome || prefersReducedMotion) {
@@ -25,15 +27,16 @@ const Side: FC<sideProps> = ({ children, isHome, orientation }) => {
 	return (
 		<StyledSideElement orientation={orientation}>
 			{prefersReducedMotion ? (
-				<>{children}</>
+				children
 			) : (
 				<TransitionGroup component={null}>
 					{isMounted && (
 						<CSSTransition
+							nodeRef={nodeRef}
 							classNames={isHome ? "fade" : ""}
 							timeout={isHome ? loaderDelay : 0}
 						>
-							{children}
+							<div ref={nodeRef}>{children}</div>
 						</CSSTransition>
 					)}
 				</TransitionGroup>

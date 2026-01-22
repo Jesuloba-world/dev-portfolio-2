@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { srConfig } from "@/config";
 import { usePrefersReducedMotion } from "@/hooks";
@@ -91,8 +91,9 @@ const About = () => {
 					</div>
 
 					<ul className="skills-list">
-						{skills &&
-							skills.map((skill, i) => <li key={i}>{skill}</li>)}
+						{skills.map((skill) => (
+							<li key={skill}>{skill}</li>
+						))}
 					</ul>
 				</StyledText>
 

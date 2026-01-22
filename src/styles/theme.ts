@@ -1,5 +1,5 @@
 import mixins from "./mixins";
-import { FlattenSimpleInterpolation } from "styled-components";
+import type { RuleSet } from "styled-components";
 
 export type ThemeInterface = {
 	bp: {
@@ -15,16 +15,16 @@ export type ThemeInterface = {
 	};
 
 	mixins: {
-		flexCenter: FlattenSimpleInterpolation;
-		flexBetween: FlattenSimpleInterpolation;
-		link: FlattenSimpleInterpolation;
-		inlineLink: FlattenSimpleInterpolation;
-		button: FlattenSimpleInterpolation;
-		smallButton: FlattenSimpleInterpolation;
-		bigButton: FlattenSimpleInterpolation;
-		boxShadow: FlattenSimpleInterpolation;
-		fancyList: FlattenSimpleInterpolation;
-		resetList: FlattenSimpleInterpolation;
+		flexCenter: RuleSet<object>;
+		flexBetween: RuleSet<object>;
+		link: RuleSet<object>;
+		inlineLink: RuleSet<object>;
+		button: RuleSet<object>;
+		smallButton: RuleSet<object>;
+		bigButton: RuleSet<object>;
+		boxShadow: RuleSet<object>;
+		fancyList: RuleSet<object>;
+		resetList: RuleSet<object>;
 	};
 };
 

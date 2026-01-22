@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import type { FC } from "react";
 import { socialMedia } from "@/config";
 import { Side } from "@/components";
 import { Icon } from "@/components/icons";
@@ -11,9 +11,8 @@ interface socialProps {
 const Social: FC<socialProps> = ({ isHome }) => (
 	<Side isHome={isHome} orientation="left">
 		<StyledSocialList>
-			{socialMedia &&
-				socialMedia.map(({ url, name }, i) => (
-					<li key={i}>
+			{socialMedia?.map(({ url, name }) => (
+				<li key={name}>
 						<a
 							href={url}
 							aria-label={name}
@@ -23,7 +22,7 @@ const Social: FC<socialProps> = ({ isHome }) => (
 							<Icon name={name} />
 						</a>
 					</li>
-				))}
+			))}
 		</StyledSocialList>
 	</Side>
 );

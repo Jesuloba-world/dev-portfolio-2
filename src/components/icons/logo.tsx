@@ -1,5 +1,3 @@
-import React from "react";
-
 const IconLogo = () => (
 	<svg
 		id="logo"
@@ -18,6 +16,7 @@ const IconLogo = () => (
 			strokeMiterlimit: 1.5,
 		}}
 	>
+		<title>Logo</title>
 		<g transform="matrix(1,0,0,1,575.025,-634.502)">
 			<g id="J" transform="matrix(3.58537,0,0,3.58537,1315.62,-1836.9)">
 				<path

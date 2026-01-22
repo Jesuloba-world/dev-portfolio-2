@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledLoader = styled.div<{ isMounted: boolean }>`
+export const StyledLoader = styled.div<{ $isMounted: boolean }>`
 	${({ theme }) => theme.mixins.flexCenter};
 	position: fixed;
 	top: 0;
@@ -16,7 +16,7 @@ export const StyledLoader = styled.div<{ isMounted: boolean }>`
 		width: max-content;
 		max-width: 100px;
 		transition: var(--transition);
-		opacity: ${(props) => (props.isMounted ? 1 : 0)};
+		opacity: ${(props) => (props.$isMounted ? 1 : 0)};
 		svg {
 			display: block;
 			width: 100%;

@@ -7,14 +7,13 @@ const Footer = () => {
 		<StyledFooter>
 			<StyledSocialLinks>
 				<ul>
-					{socialMedia &&
-						socialMedia.map(({ name, url }, i) => (
-							<li key={i}>
+					{socialMedia?.map(({ name, url }) => (
+						<li key={name}>
 								<a href={url} aria-label={name}>
 									<Icon name={name} />
 								</a>
 							</li>
-						))}
+					))}
 				</ul>
 			</StyledSocialLinks>
 

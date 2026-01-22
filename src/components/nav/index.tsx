@@ -1,4 +1,5 @@
-import React, { useState, useEffect, FC } from "react";
+import { useState, useEffect, useRef, createRef } from "react";
+import type { FC, RefObject } from "react";
 import Link from "next/link";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { navLinks } from "@/config";
@@ -15,6 +16,19 @@ interface navProps {
 const Nav: FC<navProps> = ({ isHome }) => {
 	const [isMounted, setIsMounted] = useState(!isHome);
 	const prefersReducedMotion = usePrefersReducedMotion();
+	const navItemRefs = useRef<Record<string, RefObject<HTMLLIElement | null>>>(
+		{}
+	);
+	const logoRef = useRef<HTMLDivElement>(null);
+	const resumeRef = useRef<HTMLDivElement>(null);
+	const menuRef = useRef<HTMLDivElement>(null);
+
+	const getNavItemRef = (name: string) => {
+		if (!navItemRefs.current[name]) {
+			navItemRefs.current[name] = createRef<HTMLLIElement>();
+		}
+		return navItemRefs.current[name];
+	};
 
 	useEffect(() => {
 		if (prefersReducedMotion) {
@@ -35,7 +49,7 @@ const Nav: FC<navProps> = ({ isHome }) => {
 	const fadeDownClass = isHome ? "fadedown" : "";
 
 	const Logo = (
-		<div className="logo" tabIndex={-1}>
+		<div className="logo" tabIndex={-1} ref={logoRef}>
 			{isHome ? (
 				<Link href="/" aria-label="home">
 					<IconLogo />
@@ -68,9 +82,8 @@ const Nav: FC<navProps> = ({ isHome }) => {
 
 						<StyledLinks>
 							<ol>
-								{navLinks &&
-									navLinks.map(({ url, name }, i) => (
-										<li key={i}>
+								{navLinks?.map(({ url, name }) => (
+										<li key={name}>
 											<Link href={url}>{name}</Link>
 										</li>
 									))}
@@ -85,10 +98,11 @@ const Nav: FC<navProps> = ({ isHome }) => {
 						<TransitionGroup component={null}>
 							{isMounted && (
 								<CSSTransition
+									nodeRef={logoRef}
 									classNames={fadeClass}
 									timeout={timeout}
 								>
-									<>{Logo}</>
+									{Logo}
 								</CSSTransition>
 							)}
 						</TransitionGroup>
@@ -98,36 +112,45 @@ const Nav: FC<navProps> = ({ isHome }) => {
 								<TransitionGroup component={null}>
 									{isMounted &&
 										navLinks &&
-										navLinks.map(({ url, name }, i) => (
-											<CSSTransition
-												key={i}
-												classNames={fadeDownClass}
-												timeout={timeout}
-											>
-												<li
-													key={i}
-													style={{
-														transitionDelay: `${
-															isHome ? i * 100 : 0
-														}ms`,
-													}}
+										navLinks.map(({ url, name }, i) => {
+											const navItemRef = getNavItemRef(name);
+
+											return (
+												<CSSTransition
+													key={name}
+													nodeRef={navItemRef}
+													classNames={fadeDownClass}
+													timeout={timeout}
 												>
-													<Link href={url}>
-														{name}
-													</Link>
-												</li>
-											</CSSTransition>
-										))}
+													<li
+														ref={navItemRef}
+														style={{
+															transitionDelay: `${
+																isHome
+																	? i * 100
+																	: 0
+															}ms`,
+														}}
+													>
+														<Link href={url}>
+															{name}
+														</Link>
+													</li>
+												</CSSTransition>
+											);
+										})}
 								</TransitionGroup>
 							</ol>
 
 							<TransitionGroup component={null}>
 								{isMounted && (
 									<CSSTransition
+										nodeRef={resumeRef}
 										classNames={fadeDownClass}
 										timeout={timeout}
 									>
 										<div
+											ref={resumeRef}
 											style={{
 												transitionDelay: `${
 													isHome
@@ -146,10 +169,13 @@ const Nav: FC<navProps> = ({ isHome }) => {
 						<TransitionGroup component={null}>
 							{isMounted && (
 								<CSSTransition
+									nodeRef={menuRef}
 									classNames={fadeClass}
 									timeout={timeout}
 								>
-									<Menu />
+									<div ref={menuRef}>
+										<Menu />
+									</div>
 								</CSSTransition>
 							)}
 						</TransitionGroup>

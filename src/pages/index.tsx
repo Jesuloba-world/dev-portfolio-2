@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Layout, Hero, About, Jobs, Featured, Contact } from "@/components";
-import { NextPage } from "next";
-import { jobs, getJobReturnType, featured, getFeaturedReturnType } from "@/lib";
+import type { NextPage } from "next";
+import { jobs, type getJobReturnType, featured, type getFeaturedReturnType } from "@/lib";
 
 const StyledMainContainer = styled.main`
 	counter-reset: section;

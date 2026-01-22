@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback, FC } from "react";
-import anime from "animejs";
+import { useState, useEffect, useCallback, type FC } from "react";
+import { createTimeline, svg } from "animejs";
 import { StyledLoader } from "./loader.style";
 import { IconLoader } from "@/components/icons";
 
@@ -11,36 +11,33 @@ const Loader: FC<loaderProps> = ({ finishLoading }) => {
 	const [isMounted, setIsMounted] = useState(false);
 
 	const animate = useCallback(() => {
-		const loader = anime.timeline({
-			complete: () => finishLoading(),
+		const drawableLogoPath = svg.createDrawable("#logo path");
+		const loader = createTimeline({
+			onComplete: () => finishLoading(),
 		});
 
 		loader
-			.add({
-				targets: "#logo path",
+			.add(drawableLogoPath, {
 				delay: 300,
 				duration: 1500,
-				easing: "easeInOutQuart",
-				strokeDashoffset: [anime.setDashoffset, 0],
+				ease: "inOutQuart",
+				draw: "0 1",
 			})
-			.add({
-				targets: "#logo #J",
+			.add("#logo #J", {
 				duration: 700,
-				easing: "easeInOutQuart",
+				ease: "inOutQuart",
 				opacity: 1,
 			})
-			.add({
-				targets: "#logo",
+			.add("#logo", {
 				delay: 500,
 				duration: 300,
-				easing: "easeInOutQuart",
+				ease: "inOutQuart",
 				opacity: 0,
 				scale: 0.1,
 			})
-			.add({
-				targets: ".loader",
+			.add(".loader", {
 				duration: 200,
-				easing: "easeInOutQuart",
+				ease: "inOutQuart",
 				opacity: 0,
 				zIndex: -1,
 			});
@@ -53,13 +50,13 @@ const Loader: FC<loaderProps> = ({ finishLoading }) => {
 	}, [animate]);
 
 	useEffect(() => {
-		const body = document.querySelector("body")!;
+		const body = document.body;
 		body.classList.add("hidden");
 		return body.classList.remove("hidden");
 	}, []);
 
 	return (
-		<StyledLoader className="loader" isMounted={isMounted}>
+		<StyledLoader className="loader" $isMounted={isMounted}>
 			<div className="logo-wrapper">
 				<IconLoader />
 			</div>

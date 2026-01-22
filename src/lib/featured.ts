@@ -1,14 +1,24 @@
-import fs from "fs";
-import { join } from "path";
+import fs from "node:fs";
+import { join } from "node:path";
 import matter from "gray-matter";
 
 export type getFeaturedReturnType = {
 	slug: string;
-	frontmatter: { [key: string]: any };
+	frontmatter: FeaturedFrontmatter;
 	content: string;
 };
 
 type getFeaturedBySlugType = (slug: string) => getFeaturedReturnType;
+
+export type FeaturedFrontmatter = {
+	date: string;
+	title: string;
+	cover: string;
+	tech: string[];
+	github?: string;
+	external?: string;
+	cta?: string;
+};
 
 const featuredDirectory = join(process.cwd(), "content/featured");
 
@@ -24,6 +34,7 @@ export const getFeaturedBySlug: getFeaturedBySlugType = (slug) => {
 	const realSlug: string = slug.replace(/\.md$/, "");
 	const fullPath = join(featuredDirectory, `${realSlug}/index.md`);
 	const fileContents = fs.readFileSync(fullPath, "utf8");
-	const { data: frontmatter, content } = matter(fileContents);
+	const { data, content } = matter(fileContents);
+	const frontmatter = data as FeaturedFrontmatter;
 	return { slug: realSlug, frontmatter, content };
 };

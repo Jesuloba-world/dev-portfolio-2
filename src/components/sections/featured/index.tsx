@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import type { FC } from "react";
 import { srConfig } from "@/config";
 import { Icon } from "@/components/icons";
 import { usePrefersReducedMotion } from "@/hooks";
 import { StyledProject, StyledProjectsGrid } from "./featured.style";
-import { getFeaturedReturnType } from "@/lib";
+import type { getFeaturedReturnType } from "@/lib";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 
@@ -11,7 +12,7 @@ interface featuredProps {
 	data: getFeaturedReturnType[];
 }
 
-const Featured: React.FC<featuredProps> = ({ data }) => {
+const Featured: FC<featuredProps> = ({ data }) => {
 	const featuredProjects = data?.filter((node) => node);
 	const revealTitle = useRef(null);
 	const revealProjects = useRef<(HTMLLIElement | null)[]>([]);
@@ -43,16 +44,19 @@ const Featured: React.FC<featuredProps> = ({ data }) => {
 			</h2>
 
 			<StyledProjectsGrid>
-				{featuredProjects &&
-					featuredProjects.map((node, i) => {
+				{featuredProjects?.map((node, i) => {
 						const { frontmatter, content } = node;
 						const { external, title, tech, github, cover, cta } =
 							frontmatter;
+						const projectKey =
+							github || external || title || `project-${i}`;
 
 						return (
 							<StyledProject
-								key={i}
-								ref={(el) => (revealProjects.current[i] = el)}
+								key={projectKey}
+								ref={(el) => {
+									revealProjects.current[i] = el;
+								}}
 							>
 								<div className="project-content">
 									<div>
@@ -72,14 +76,11 @@ const Featured: React.FC<featuredProps> = ({ data }) => {
 
 										{tech.length && (
 											<ul className="project-tech-list">
-												{tech.map(
-													(
-														tech: string,
-														i: number
-													) => (
-														<li key={i}>{tech}</li>
-													)
-												)}
+												{tech.map((techItem) => (
+													<li key={techItem}>
+														{techItem}
+													</li>
+												))}
 											</ul>
 										)}
 

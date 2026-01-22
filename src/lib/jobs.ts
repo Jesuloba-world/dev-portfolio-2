@@ -1,14 +1,23 @@
-import fs from "fs";
-import { join } from "path";
+import fs from "node:fs";
+import { join } from "node:path";
 import matter from "gray-matter";
 
 export type getJobReturnType = {
 	slug: string;
-	frontmatter: { [key: string]: any };
+	frontmatter: JobFrontmatter;
 	content: string;
 };
 
 type getJobBySlugType = (slug: string) => getJobReturnType;
+
+export type JobFrontmatter = {
+	date: string;
+	title: string;
+	company: string;
+	range: string;
+	location?: string;
+	url?: string;
+};
 
 const jobsDirectory = join(process.cwd(), "content/jobs");
 
@@ -29,7 +38,8 @@ export const getJobsBySlug: getJobBySlugType = (slug) => {
 	const realSlug: string = slug.replace(/\.md$/, "");
 	const fullPath = join(jobsDirectory, `${realSlug}/index.md`);
 	const fileContents = fs.readFileSync(fullPath, "utf8");
-	const { data: frontmatter, content } = matter(fileContents);
+	const { data, content } = matter(fileContents);
+	const frontmatter = data as JobFrontmatter;
 
 	return { slug: realSlug, frontmatter, content };
 };

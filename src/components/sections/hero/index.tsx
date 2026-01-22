@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef, createRef } from "react";
+import type { RefObject } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { navDelay, loaderDelay } from "@/utils";
 import { usePrefersReducedMotion } from "@/hooks";
@@ -8,6 +9,16 @@ import Link from "next/link";
 const Hero = () => {
 	const [isMounted, setIsMounted] = useState(false);
 	const prefersReducedMotion = usePrefersReducedMotion();
+	const itemRefs = useRef<Record<string, RefObject<HTMLDivElement | null>>>(
+		{}
+	);
+
+	const getItemRef = (key: string) => {
+		if (!itemRefs.current[key]) {
+			itemRefs.current[key] = createRef<HTMLDivElement>();
+		}
+		return itemRefs.current[key];
+	};
 
 	useEffect(() => {
 		if (prefersReducedMotion) {
@@ -40,32 +51,41 @@ const Hero = () => {
 		</Link>
 	);
 
-	const items = [two, three, four, five];
+	const items = [
+		{ key: "title", node: two },
+		{ key: "subtitle", node: three },
+		{ key: "description", node: four },
+		{ key: "cta", node: five },
+	];
 
 	return (
 		<StyledHeroSection>
 			{prefersReducedMotion ? (
-				<>
-					{items.map((item, i) => (
-						<div key={i}>{item}</div>
-					))}
-				</>
+				items.map(({ key, node }) => <div key={key}>{node}</div>)
 			) : (
 				<TransitionGroup component={null}>
 					{isMounted &&
-						items.map((item, i) => (
-							<CSSTransition
-								key={i}
-								classNames="fadeup"
-								timeout={loaderDelay}
-							>
-								<div
-									style={{ transitionDelay: `${i + 1}00ms` }}
+						items.map(({ key, node }, i) => {
+							const nodeRef = getItemRef(key);
+
+							return (
+								<CSSTransition
+									key={key}
+									nodeRef={nodeRef}
+									classNames="fadeup"
+									timeout={loaderDelay}
 								>
-									{item}
-								</div>
-							</CSSTransition>
-						))}
+									<div
+										ref={nodeRef}
+										style={{
+											transitionDelay: `${i + 1}00ms`,
+										}}
+									>
+										{node}
+									</div>
+								</CSSTransition>
+							);
+						})}
 				</TransitionGroup>
 			)}
 		</StyledHeroSection>

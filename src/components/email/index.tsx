@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { email } from "@/config";
 import { Side } from "@/components";
 import { StyledLinkWrapper } from "./email.style";

@@ -8,7 +8,7 @@ export const StyledMenu = styled.div`
 	}
 `;
 
-export const StyledHamburgerButton = styled.button<{ menuOpen: boolean }>`
+export const StyledHamburgerButton = styled.button<{ $menuOpen: boolean }>`
 	display: none;
 
 	@media (max-width: 768px) {
@@ -43,11 +43,11 @@ export const StyledHamburgerButton = styled.button<{ menuOpen: boolean }>`
 		background-color: var(--green);
 		transition-duration: 0.22s;
 		transition-property: transform;
-		transition-delay: ${(props) => (props.menuOpen ? `0.12s` : `0s`)};
-		transform: rotate(${(props) => (props.menuOpen ? `225deg` : `0deg`)});
+		transition-delay: ${(props) => (props.$menuOpen ? `0.12s` : `0s`)};
+		transform: rotate(${(props) => (props.$menuOpen ? `225deg` : `0deg`)});
 		transition-timing-function: cubic-bezier(
 			${(props) =>
-				props.menuOpen
+				props.$menuOpen
 					? `0.215, 0.61, 0.355, 1`
 					: `0.55, 0.055, 0.675, 0.19`}
 		);
@@ -67,23 +67,23 @@ export const StyledHamburgerButton = styled.button<{ menuOpen: boolean }>`
 			transition-property: transform;
 		}
 		&:before {
-			width: ${(props) => (props.menuOpen ? `100%` : `120%`)};
-			top: ${(props) => (props.menuOpen ? `0` : `-10px`)};
-			opacity: ${(props) => (props.menuOpen ? 0 : 1)};
-			transition: ${({ menuOpen }) =>
-				menuOpen ? "var(--ham-before-active)" : "var(--ham-before)"};
+			width: ${(props) => (props.$menuOpen ? `100%` : `120%`)};
+			top: ${(props) => (props.$menuOpen ? `0` : `-10px`)};
+			opacity: ${(props) => (props.$menuOpen ? 0 : 1)};
+			transition: ${({ $menuOpen }) =>
+				$menuOpen ? "var(--ham-before-active)" : "var(--ham-before)"};
 		}
 		&:after {
-			width: ${(props) => (props.menuOpen ? `100%` : `80%`)};
-			bottom: ${(props) => (props.menuOpen ? `0` : `-10px`)};
-			transform: rotate(${(props) => (props.menuOpen ? `-90deg` : `0`)});
-			transition: ${({ menuOpen }) =>
-				menuOpen ? "var(--ham-after-active)" : "var(--ham-after)"};
+			width: ${(props) => (props.$menuOpen ? `100%` : `80%`)};
+			bottom: ${(props) => (props.$menuOpen ? `0` : `-10px`)};
+			transform: rotate(${(props) => (props.$menuOpen ? `-90deg` : `0`)});
+			transition: ${({ $menuOpen }) =>
+				$menuOpen ? "var(--ham-after-active)" : "var(--ham-after)"};
 		}
 	}
 `;
 
-export const StyledSidebar = styled.aside<{ menuOpen: boolean }>`
+export const StyledSidebar = styled.aside<{ $menuOpen: boolean }>`
 	display: none;
 
 	@media (max-width: 768px) {
@@ -99,8 +99,8 @@ export const StyledSidebar = styled.aside<{ menuOpen: boolean }>`
 		background-color: var(--light-navy);
 		box-shadow: -10px 0px 30px -15px var(--navy-shadow);
 		z-index: 9;
-		transform: translateX(${(props) => (props.menuOpen ? 0 : 100)}vw);
-		visibility: ${(props) => (props.menuOpen ? "visible" : "hidden")};
+		transform: translateX(${(props) => (props.$menuOpen ? 0 : 100)}vw);
+		visibility: ${(props) => (props.$menuOpen ? "visible" : "hidden")};
 		transition: var(--transition);
 	}
 

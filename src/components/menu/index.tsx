@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import Script from "next/script";
 import { navLinks } from "@/config";
 import { KEY_CODES } from "@/utils";
 import { useOnClickOutside } from "@/hooks";
@@ -19,9 +18,18 @@ const Menu = () => {
 	const lastFocusableElRef = useRef<HTMLElement | null>(null);
 
 	const setFocusables = useCallback(() => {
+		const buttonEl = buttonRef.current;
+		const navEl = navRef.current;
+		if (!buttonEl || !navEl) {
+			menuFocusablesRef.current = [];
+			firstFocusableElRef.current = null;
+			lastFocusableElRef.current = null;
+			return;
+		}
+
 		const menuFocusables = [
-			buttonRef.current!,
-			...Array.from(navRef.current!.querySelectorAll("a")),
+			buttonEl,
+			...Array.from(navEl.querySelectorAll("a")),
 		];
 		menuFocusablesRef.current = menuFocusables;
 		firstFocusableElRef.current = menuFocusables[0] || null;
@@ -81,11 +89,11 @@ const Menu = () => {
 		[handleBackwardTab, handleForwardTab]
 	);
 
-	const onResize = (e: UIEvent) => {
+	const onResize = useCallback((e: UIEvent) => {
 		if ((e.currentTarget as Window).innerWidth > 768) {
 			setMenuOpen(false);
 		}
-	};
+	}, []);
 
 	useEffect(() => {
 		document.addEventListener("keydown", onKeyDown);
@@ -97,10 +105,10 @@ const Menu = () => {
 			document.removeEventListener("keydown", onKeyDown);
 			window.removeEventListener("resize", onResize);
 		};
-	}, [onKeyDown, setFocusables]);
+	}, [onKeyDown, onResize, setFocusables]);
 
 	useEffect(() => {
-		const body = document.querySelector("body")!;
+		const body = document.body;
 
 		if (menuOpen) {
 			body.classList.add("blur");
@@ -117,7 +125,7 @@ const Menu = () => {
 			<div ref={wrapperRef}>
 				<StyledHamburgerButton
 					onClick={toggleMenu}
-					menuOpen={menuOpen}
+					$menuOpen={menuOpen}
 					ref={buttonRef}
 					aria-label="Menu"
 				>
@@ -127,15 +135,15 @@ const Menu = () => {
 				</StyledHamburgerButton>
 
 				<StyledSidebar
-					menuOpen={menuOpen}
+					$menuOpen={menuOpen}
 					aria-hidden={!menuOpen}
 					tabIndex={menuOpen ? 1 : -1}
 				>
 					<nav ref={navRef}>
 						{navLinks && (
 							<ol>
-								{navLinks.map(({ url, name }, i) => (
-									<li key={i}>
+								{navLinks.map(({ url, name }) => (
+									<li key={name}>
 										<Link
 											href={url}
 											onClick={() => setMenuOpen(false)}

@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { StyledContactSection } from "./contact.style";
 import { srConfig, email } from "@/config";
 import { usePrefersReducedMotion } from "@/hooks";
 
 const Contact = () => {
-	const revealContainer = useRef(null);
+	const revealContainer = useRef<HTMLElement | null>(null);
 	const prefersReducedMotion = usePrefersReducedMotion();
 
 	useEffect(() => {

@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef, useCallback, KeyboardEvent } from "react";
+import { useState, useEffect, useRef, createRef } from "react";
+import type { FC, RefObject } from "react";
 import { CSSTransition } from "react-transition-group";
 import {
 	StyledHighlight,
@@ -10,7 +11,7 @@ import {
 } from "./jobs.style";
 import { srConfig } from "@/config";
 import { usePrefersReducedMotion } from "@/hooks";
-import { getJobReturnType } from "@/lib/jobs";
+import type { getJobReturnType } from "@/lib/jobs";
 import ReactMarkdown from "react-markdown";
 
 type TabRef = {
@@ -24,15 +25,23 @@ interface jobProps {
 	jobsData: getJobReturnType[];
 }
 
-const Jobs: React.FC<jobProps> = ({ jobsData }) => {
+const Jobs: FC<jobProps> = ({ jobsData }) => {
 	const [activeTabId, setActiveTabId] = useState(0);
 	const tabs = useRef<TabsRef>([]);
-	const revealContainer = useRef(null);
+	const panelRefs = useRef<Array<RefObject<HTMLDivElement | null>>>([]);
+	const revealContainer = useRef<HTMLElement | null>(null);
 	const prefersReducedMotion = usePrefersReducedMotion();
 	const [highlightPosition, setHighlightPosition] = useState({
 		left: 0,
 		width: 0,
 	});
+
+	const getPanelRef = (index: number) => {
+		if (!panelRefs.current[index]) {
+			panelRefs.current[index] = createRef<HTMLDivElement>();
+		}
+		return panelRefs.current[index];
+	};
 
 	useEffect(() => {
 		if (prefersReducedMotion) {
@@ -62,20 +71,22 @@ const Jobs: React.FC<jobProps> = ({ jobsData }) => {
 
 			<div className="inner">
 				<StyledTabList role="tablist" aria-label="Job tabs">
-					{jobsData &&
-						jobsData.map((node, i) => {
+					{jobsData?.map((node, i) => {
 							const { company } = node.frontmatter;
+							const tabKey = node.slug || company;
 							return (
 								<StyledTabButton
-									key={i}
-									isActive={activeTabId === i}
+									key={tabKey}
+									$isActive={activeTabId === i}
 									onClick={() => setActiveTabId(i)}
-									ref={(el) => (tabs.current[i] = el)}
+									ref={(el) => {
+										tabs.current[i] = el;
+									}}
 									id={`tab-${i}`}
 									role="tab"
 									tabIndex={activeTabId === i ? 0 : -1}
 									aria-selected={
-										activeTabId === i ? true : false
+										activeTabId === i
 									}
 									aria-controls={`panel-${i}`}
 								>
@@ -84,25 +95,28 @@ const Jobs: React.FC<jobProps> = ({ jobsData }) => {
 							);
 						})}
 					<StyledHighlight
-						activeTabId={activeTabId}
-						highlight={highlightPosition}
+						$activeTabId={activeTabId}
+						$highlight={highlightPosition}
 					/>
 				</StyledTabList>
 
 				<StyledTabPanels>
-					{jobsData &&
-						jobsData.map((node, i) => {
+					{jobsData?.map((node, i) => {
 							const { frontmatter, content } = node;
 							const { title, url, company, range } = frontmatter;
+							const panelKey = node.slug || company;
+							const panelRef = getPanelRef(i);
 
 							return (
 								<CSSTransition
-									key={i}
+									key={panelKey}
+									nodeRef={panelRef}
 									in={activeTabId === i}
 									timeout={250}
 									classNames="fade"
 								>
 									<StyledTabPanel
+										ref={panelRef}
 										id={`panel-${i}`}
 										role="tabpanel"
 										tabIndex={activeTabId === i ? 0 : -1}
