@@ -9,4 +9,3 @@ url: 'https://postpaddy.com'
 - Complex UI Engineering: Built a sophisticated frontend experience using React, integrating Puck for a drag-and-drop email editor and React Flow for a visual marketing automation builder.
 - AI & Analytics: Collaborated with AI engineers to integrate LLM capabilities, allowing users to auto-generate email copy and automation workflows. Developed a real-time analytics engine to ingest webhook events (opens, clicks) and visualize campaign performance.
 - End-to-End Ownership: Managed the entire SDLC from database design to deployment, delivering a production-ready SaaS product single-handedly.
-    
